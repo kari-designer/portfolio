@@ -828,9 +828,16 @@ section[id], div[id].anchor { scroll-margin-top: 70px; }
   background-size: 100% 100%, 220% 100%; animation: bnflow 7s linear infinite;
   box-shadow: var(--shadow-sm); transition: transform .35s var(--ease), box-shadow .35s; }
 .bn-card:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -12px color-mix(in srgb, var(--accent) 60%, transparent); }
-@keyframes bnflow { to { background-position: 0 0, 220% 0; } }
-  font-size: 18px; color: #fff; background: linear-gradient(135deg, var(--accent), #ec4899);
-  box-shadow: 0 0 22px -4px var(--accent); }
+@keyframes bnflow { 
+    to { background-position: 0 0, 220% 0; } 
+}
+
+.bn-ico {
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent), #ec4899);
+    box-shadow: 0 0 22px -4px var(--accent);
+}
 .bn-card p { font-size: clamp(14px, 1.4vw, 16px); color: var(--ink-soft); line-height: 1.4; }
 .bn-grad { font-weight: 700; background: linear-gradient(100deg, var(--accent), #ec4899);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
