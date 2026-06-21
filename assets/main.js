@@ -63,8 +63,8 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
 //   3. Send any message to YOUR new bot once so it can write to you.
 // ====================================================================
 const TELEGRAM = {
-  token: 'PASTE_BOT_TOKEN_HERE',     // e.g. '7712345678:AAH...'
-  chatId: 'PASTE_CHAT_ID_HERE'       // e.g. '123456789'
+  token: '8984325595:AAFAAEnJix6oYxOTDrl76pKGte5Lwh_DZoQ',
+  chatId: '479351502'
 };
 
 // ---- Contact form (sends straight to Karina's Telegram) ----
