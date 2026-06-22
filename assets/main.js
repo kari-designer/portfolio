@@ -172,7 +172,7 @@ document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date
   // ---- Scroll parallax ([data-speed]) ----
   const speedEls = [...document.querySelectorAll('[data-speed]')];
   function scrollPar() { const y = scrollY; speedEls.forEach(el => { el.style.transform = `translate3d(0, ${y * (parseFloat(el.dataset.speed) || 0)}px, 0)`; }); }
-  if (speedEls.length && !reduce) { addEventListener('scroll', scrollPar, { passive: true }); scrollPar(); }
+  if (speedEls.length && !reduce && innerWidth > 820) { addEventListener('scroll', scrollPar, { passive: true }); scrollPar(); }
 
   // ---- Horizontal scroll section (.h-scroll) ----
   const hWrap = document.querySelector('.h-scroll');
