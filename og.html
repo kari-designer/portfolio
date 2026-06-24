@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OG Preview — Design Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #07070b; display: flex; justify-content: center; }
+  /* Open Graph preview = 1200×630 */
+  .canvas {
+    width: 1200px; height: 630px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(120% 100% at 8% 0%, rgba(108,92,255,.32), transparent 52%),
+      radial-gradient(120% 100% at 100% 100%, rgba(236,72,153,.26), transparent 52%),
+      linear-gradient(160deg, #0b0b12, #07070b 62%);
+    font-family: "Inter", sans-serif; color: #f3f4f7; display: flex; align-items: center;
+    padding: 0 64px; gap: 48px;
+  }
+  .canvas::before { content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0);
+    background-size: 30px 30px; opacity: .5; pointer-events: none; }
+
+  .left { position: relative; z-index: 2; width: 50%; }
+  .brand { display: flex; align-items: center; gap: 11px; margin-bottom: 26px; }
+  .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: #8b85ff; }
+  .brand b { font-size: 23px; font-weight: 800; letter-spacing: -.02em; }
+  .brand span { display: block; font-size: 12px; color: #a6abb8; margin-top: 1px; }
+  .left h1 { font-size: 58px; line-height: .98; font-weight: 800; letter-spacing: -.045em; }
+  .left h1 .ac { background: linear-gradient(100deg, #8b85ff, #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .left p { margin-top: 18px; font-size: 19px; color: #b4b8c2; }
+  .tags { display: flex; gap: 9px; margin-top: 24px; }
+  .tags span { font-size: 13px; font-weight: 600; padding: 8px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); color: #cfd2da; background: rgba(255,255,255,.03); }
+
+  .right { position: relative; z-index: 2; width: 50%; display: flex; justify-content: center; }
+  .lap { width: 560px; }
+  .lid { border: 9px solid #1b1c23; border-radius: 16px; overflow: hidden; background: #000; box-shadow: 0 40px 80px -30px rgba(0,0,0,.85); }
+  .scr { aspect-ratio: 16/10; position: relative; background: #0d0e12; }
+  .scr iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .deck { width: 632px; height: 18px; margin: -2px 0 0 -36px; background: linear-gradient(180deg, #34363f, #1a1b22 38%, #0c0d12); border-radius: 4px 4px 12px 12px; box-shadow: 0 24px 40px -18px rgba(0,0,0,.7); position: relative; }
+  .deck::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 7px; background: #08090d; border-radius: 0 0 9px 9px; }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="left">
+      <div class="brand"><span class="dot"></span><div><b>Design Lab</b><span>by Karina Kudina</span></div></div>
+      <h1>Design that<br><span class="ac">stops the scroll</span></h1>
+      <p>Product Designer · UX / UI · Web · Kyiv</p>
+      <div class="tags"><span>UX / UI</span><span>Web Design</span><span>2026</span></div>
+    </div>
+    <div class="right">
+      <div class="lap">
+        <div class="lid"><div class="scr"><iframe src="index.html?cover" title="site" scrolling="no"></iframe></div></div>
+        <div class="deck"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const f = document.querySelector('iframe');
+    f.addEventListener('load', () => { try { f.contentWindow.scrollTo(0, 0); } catch (e) {} });
+  </script>
+</body>
+</html>

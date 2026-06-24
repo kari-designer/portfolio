@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Lab — Portfolio Website · Case Study (Behance export)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Fixed-width export canvas — open & take a Chrome full-page screenshot */
+body { background: var(--bg); }
+.cs { width: 1280px; max-width: 100%; margin: 0 auto; padding: 0 64px; }
+.cs-section { padding-block: 96px; }
+.kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; }
+.muted { color: var(--ink-soft); }
+.lead { font-size: 21px; color: var(--ink-soft); line-height: 1.6; max-width: 62ch; }
+
+/* Cover */
+.cover { min-height: 760px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.cover .bgword { position: absolute; right: -2%; bottom: 3%; font-size: 260px; font-weight: 800; line-height: 1; color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--ink) 9%, transparent); pointer-events: none; white-space: nowrap; }
+.cover h1 { font-size: 104px; line-height: .9; font-weight: 800; margin: 18px 0 0; position: relative; z-index: 1; letter-spacing: -.04em; }
+.cover h1 .ac { background: linear-gradient(100deg, var(--accent), #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.cover .sub { margin-top: 24px; position: relative; z-index: 1; }
+.meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); position: relative; z-index: 1; }
+.meta .l { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+.meta .v { margin-top: 6px; font-weight: 600; font-size: 15px; }
+
+/* Hero mock (real elements) */
+.heromock { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center; border: 1px solid var(--line);
+  border-radius: 20px; padding: 56px; background: var(--bg-elev); box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+.heromock h2 { font-size: 64px; line-height: .92; font-weight: 800; letter-spacing: -.045em; }
+.heromock h2 .ac { background: linear-gradient(100deg, var(--accent), #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.heromock .p { color: var(--ink-soft); margin-top: 20px; font-size: 17px; max-width: 34ch; }
+.heromock .btns { display: flex; gap: 12px; margin-top: 28px; }
+.heromock .pic { aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+.heromock .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Phase */
+.phase { padding-block: 88px; border-top: 1px solid var(--line); }
+.phase-head { display: flex; align-items: flex-end; gap: 40px; margin-bottom: 8px; }
+.phase-num { font-size: 180px; font-weight: 800; line-height: .8; color: transparent; -webkit-text-stroke: 1.5px color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.phase-title { font-size: 72px; font-weight: 800; line-height: .95; letter-spacing: -.03em; }
+.phase-head p { margin-left: auto; max-width: 34ch; color: var(--ink-soft); font-size: 15px; }
+
+/* Steps */
+.step { display: grid; grid-template-columns: 190px 1fr; gap: 48px; padding-block: 46px; border-top: 1px solid var(--line); }
+.step .k { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-ink); }
+.step .k small { display: block; color: var(--ink-faint); font-weight: 500; letter-spacing: .12em; margin-bottom: 6px; }
+.step h3 { font-size: 30px; margin-bottom: 14px; letter-spacing: -.03em; }
+.step p { color: var(--ink-soft); max-width: 64ch; margin-bottom: 14px; line-height: 1.7; font-size: 16px; }
+.step .why { border-left: 2px solid var(--accent); padding-left: 16px; color: var(--ink); }
+.step .why b { color: var(--accent-ink); }
+
+/* Design-system visuals (real) */
+.swatches { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+.swatch { width: 120px; }
+.swatch .chip { height: 78px; border-radius: 12px; border: 1px solid var(--line); }
+.swatch .name { font-size: 12px; margin-top: 8px; font-weight: 600; }
+.swatch .hex { font-size: 11px; color: var(--ink-faint); }
+.type-scale { display: grid; gap: 14px; margin-top: 26px; }
+.type-scale div { display: flex; align-items: baseline; gap: 18px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+.type-scale .tl { font-size: 12px; color: var(--ink-faint); width: 92px; }
+.comp { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 26px; }
+
+/* Showcase mini blocks (real components, static) */
+.show-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+.mini-tile { position: relative; border: 1px solid var(--line); border-radius: 16px; padding: 24px; background: var(--bg-elev); overflow: hidden; min-height: 160px; }
+.mini-tile .num { position: absolute; top: 10px; right: 16px; font-size: 60px; font-weight: 800; color: transparent; -webkit-text-stroke: 1px var(--line); }
+.mini-tile h4 { font-size: 20px; margin-top: 40px; }
+.mini-tile p { font-size: 13px; color: var(--ink-soft); margin-top: 8px; }
+
+.timeline { display: flex; gap: 26px; position: relative; margin-top: 20px; }
+.timeline::before { content: ""; position: absolute; top: 23px; left: 24px; right: 24px; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), #ec4899, transparent); opacity: .5; }
+.tnode { flex: 1; }
+.tdot { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg-elev); display: grid; place-items: center; font-weight: 700; color: var(--accent-ink); position: relative; z-index: 1; }
+.tnode h4 { font-size: 14px; margin-top: 16px; }
+.tnode p { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
+.metric { padding: 28px; border-radius: 14px; background: var(--bg-soft); border: 1px solid var(--line); }
+.metric .big { font-size: 42px; font-weight: 800; color: var(--accent-ink); letter-spacing: -.03em; }
+.metric .lbl { color: var(--ink-soft); font-size: 14px; margin-top: 4px; }
+
+.end { text-align: center; padding-block: 110px; border-top: 1px solid var(--line); }
+.end h2 { font-size: 56px; letter-spacing: -.03em; }
+
+/* Real site screenshots */
+.shot { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); background: var(--bg-soft); margin-top: 18px; }
+.shot img { width: 100%; display: block; }
+.shot.placeholder { aspect-ratio: 16/10; display: grid; place-items: center; position: relative; }
+.shot.placeholder::after { content: attr(data-label); color: var(--ink-faint); font-size: 14px; letter-spacing: .04em; }
+.shot.placeholder .mesh { position: absolute; inset: 0; opacity: .5; }
+.shots-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+.shots-2 .shot { margin-top: 0; }
+.shotcap { font-size: 13px; color: var(--ink-faint); margin-top: 10px; }
+</style>
+</head>
+<body>
+<main class="cs">
+
+<!-- COVER -->
+<header class="cs-section cover">
+  <div class="bgword">DESIGN&nbsp;LAB</div>
+  <span class="kicker">UX / UI Case Study</span>
+  <h1>Design Lab<br><span class="ac">a portfolio that converts</span></h1>
+  <p class="lead sub">A one-page, bilingual portfolio for a freelance product &amp; web designer — built to turn cold visitors into clients in a single scroll, while proving design taste through the site itself.</p>
+  <div class="meta">
+    <div><div class="l">Role</div><div class="v">UX, UI &amp; build</div></div>
+    <div><div class="l">Type</div><div class="v">One-page website</div></div>
+    <div><div class="l">Tools</div><div class="v">Figma · HTML/CSS/JS · AI</div></div>
+    <div><div class="l">Year</div><div class="v">2025</div></div>
+  </div>
+</header>
+
+<!-- HERO SHOWCASE (real elements) -->
+<section class="cs-section" style="padding-top:0;">
+  <div class="heromock">
+    <div>
+      <span class="kicker">Hero</span>
+      <h2 style="margin-top:14px;">Design that<br><span class="ac">stops the scroll</span></h2>
+      <p class="p">Bold headline, a single gradient accent, and one unmistakable call to action. The first screen does one job: hook + invite.</p>
+      <div class="btns">
+        <span class="btn btn-primary" style="background:#6c5cff;color:#fff;">Discuss a project →</span>
+        <span class="btn btn-ghost">View work</span>
+      </div>
+    </div>
+    <div class="pic"><img src="assets/karina-1.jpg" alt="Designer" onerror="this.parentElement.style.background='linear-gradient(135deg,#4f46e5,#ec4899)'"></div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="cs-section">
+  <div class="step" style="border-top:0;">
+    <div class="k"><small>00</small>Overview</div>
+    <div>
+      <h3>What &amp; why</h3>
+      <p>A personal site for a designer who builds modern websites and mentors others. It had to do three jobs at once — <b>convert</b> visitors into leads, <b>prove</b> skill, and <b>feel</b> premium and a little bold, not like a template.</p>
+      <p class="why">The hardest constraint: the site itself <b>is</b> the portfolio. Every interaction is a tiny demo of the work — so the quality of the build is the argument.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Problem</small>Challenge</div>
+    <div><h3>The problem</h3><p>Most freelance portfolios look like generic agency templates or hide the work behind clicks. Visitors leave before they get the value, and there's no clear, low-friction way to start a conversation.</p></div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Goals</small>Success</div>
+    <div><h3>Goals</h3><p>1 — Move a visitor from “who is this?” to “let's talk” in one scroll. 2 — Show skill through the experience, not claims. 3 — Make contacting effortless, landing leads straight in Telegram.</p></div>
+  </div>
+</section>
+
+<!-- UX -->
+<section class="cs-section phase">
+  <div class="phase-head"><span class="phase-num">01</span><span class="phase-title">UX</span>
+    <p>How the experience is structured, and the reasoning behind every key decision.</p></div>
+
+  <div class="step">
+    <div class="k"><small>Step 01</small>Architecture</div>
+    <div><h3>One page, not five</h3>
+      <p>A single long page with anchor navigation and smooth scroll instead of separate routes. For a portfolio, every extra click is a chance to leave — one canvas lets me control the narrative like a story.</p>
+      <p class="why">Decision → <b>one-page, smooth-scroll anchors</b>. Why → fewer drop-off points and a sequenced pitch. Result → the visitor is pulled from hook to CTA without ever “navigating”.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 02</small>Order</div>
+    <div><h3>The narrative order</h3>
+      <p>Hero → About → Skills → Work → Services → Mentoring → Pricing → Testimonials → Contact. It mirrors how trust builds: <i>hook → who → proof → what I do → social proof → price → act</i>. Pricing sits <b>after</b> proof and testimonials on purpose — by then the value is obvious, so the number feels fair.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 03</small>Navigation</div>
+    <div><h3>Cut the menu to 5</h3>
+      <p>The header shows only About · Work · Services · Mentoring · Pricing. It used to have 8 items and felt corporate. Fewer links = clearer hierarchy, less load; a scroll-spy highlights the current section so you never feel lost on a long page.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 04</small>The CTA</div>
+    <div><h3>Why “Discuss a project”, not “Contact”</h3>
+      <p>The primary button reads <b>“Discuss a project”</b>, not “Contact us” or “Submit”. “Contact” is a chore; “discuss a project” is a low-commitment, collaborative invitation that matches how freelance deals actually begin. High-contrast solid fill makes it unmistakably <i>the</i> action.</p>
+      <div class="comp"><span class="btn btn-primary" style="background:#6c5cff;color:#fff;">Discuss a project</span><span class="muted" style="font-size:13px;">← the one button that matters</span></div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 05</small>The form</div>
+    <div><h3>One field beats two</h3>
+      <p>The form first asked for Email <i>and</i> a separate Telegram/phone field — people hesitated over which to fill. I merged them into a single required field, <b>“How to reach you (email, Telegram or phone)”</b>. Less thinking, more submits. Leads go <b>straight to Telegram</b> via a bot — replies in minutes, not days.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 06</small>Details</div>
+    <div><h3>Bilingual, accessible, fast</h3>
+      <p>Instant UA/EN toggle (Kyiv + worldwide clients), all motion respects <code>prefers-reduced-motion</code>, and heavy effects switch off on mobile so scrolling stays smooth. Hand-coded, no framework — it loads fast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- UI -->
+<section class="cs-section phase">
+  <div class="phase-head"><span class="phase-num" style="-webkit-text-stroke-color:color-mix(in srgb,#ec4899 50%,var(--line));">02</span><span class="phase-title">UI</span>
+    <p>The visual language and the system everything is built on.</p></div>
+
+  <div class="step">
+    <div class="k"><small>Step 07</small>Direction</div>
+    <div><h3>Dark, premium, one bold accent</h3>
+      <p>A near-black canvas with generous whitespace reads expensive and lets the work pop. A single indigo→pink accent carries energy without a rainbow. Big, tight Inter type does the talking; everything else stays quiet.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 08</small>System</div>
+    <div><h3>Design system</h3>
+      <p>Built on design tokens, so colour, type and components stay consistent and themeable. These are the real values used across the site:</p>
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background:#4f46e5;"></div><div class="name">Accent</div><div class="hex">#4F46E5</div></div>
+        <div class="swatch"><div class="chip" style="background:#ec4899;"></div><div class="name">Accent 2</div><div class="hex">#EC4899</div></div>
+        <div class="swatch"><div class="chip" style="background:#0d0e12;"></div><div class="name">BG</div><div class="hex">#0D0E12</div></div>
+        <div class="swatch"><div class="chip" style="background:#16171e;"></div><div class="name">Surface</div><div class="hex">#16171E</div></div>
+        <div class="swatch"><div class="chip" style="background:#f3f4f7;"></div><div class="name">Ink</div><div class="hex">#F3F4F7</div></div>
+      </div>
+      <div class="type-scale">
+        <div><span class="tl">Display</span><span style="font-size:44px;font-weight:800;letter-spacing:-.03em;">Aa — Stops the scroll</span></div>
+        <div><span class="tl">Heading</span><span style="font-size:26px;font-weight:700;">Aa — Section title</span></div>
+        <div><span class="tl">Body</span><span style="font-size:17px;font-weight:500;">Aa — Body copy, 17px Inter</span></div>
+      </div>
+      <div class="comp"><span class="btn btn-primary">Primary</span><span class="btn btn-ghost">Ghost</span>
+        <span class="skill-pills" style="display:inline-flex;gap:8px;"><span>Figma</span><span>AI tools</span><span>UX</span></span></div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 09</small>Signature UI</div>
+    <div><h3>Interactions that double as a demo</h3>
+      <p>Because the build is the pitch, the interface is full of deliberate moments — each a proof of craft:</p>
+      <div class="show-grid">
+        <div class="mini-tile"><span class="num">01</span><h4>Kinetic hero</h4><p>Golden-ratio split, gradient accent, cursor-reactive tags.</p></div>
+        <div class="mini-tile"><span class="num">02</span><h4>Custom cursor</h4><p>Inverting ring + soft light-trail.</p></div>
+        <div class="mini-tile"><span class="num">03</span><h4>Seamless marquee</h4><p>Infinite ribbon that never jumps.</p></div>
+        <div class="mini-tile"><span class="num">04</span><h4>Swiss services</h4><p>Editorial horizontal gallery, big numbers.</p></div>
+        <div class="mini-tile"><span class="num">05</span><h4>Spotlight cards</h4><p>Light follows the cursor on every card.</p></div>
+        <div class="mini-tile"><span class="num">06</span><h4>Glowing timeline</h4><p>Process flows along a gradient line.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="k"><small>Step 10</small>Process UI</div>
+    <div><h3>The process, designed</h3>
+      <p>An 8-step UX→UI flow shown as a glowing connected timeline — a small piece of the real interface:</p>
+      <div class="timeline">
+        <div class="tnode"><div class="tdot">01</div><h4>Brief</h4><p>Goals &amp; metrics</p></div>
+        <div class="tnode"><div class="tdot">02</div><h4>Research</h4><p>Find the real problem</p></div>
+        <div class="tnode"><div class="tdot">03</div><h4>Flows</h4><p>User flows &amp; IA</p></div>
+        <div class="tnode"><div class="tdot">04</div><h4>Wireframes</h4><p>Validate hierarchy</p></div>
+        <div class="tnode"><div class="tdot">05</div><h4>UI</h4><p>High-fidelity</p></div>
+        <div class="tnode"><div class="tdot">06</div><h4>Prototype</h4><p>Feels real</p></div>
+        <div class="tnode"><div class="tdot">07</div><h4>Testing</h4><p>Iterate</p></div>
+        <div class="tnode"><div class="tdot">08</div><h4>Handoff</h4><p>Ship &amp; support</p></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- OUTCOME -->
+<section class="cs-section phase">
+  <span class="kicker">Outcome</span>
+  <h2 style="font-size:46px;margin:12px 0 26px;letter-spacing:-.03em;">What it adds up to</h2>
+  <div class="metrics">
+    <div class="metric"><div class="big">1</div><div class="lbl">scroll from hook to “let's talk”</div></div>
+    <div class="metric"><div class="big">2</div><div class="lbl">languages, one instant toggle</div></div>
+    <div class="metric"><div class="big">&lt;1s</div><div class="lbl">lead lands in Telegram</div></div>
+  </div>
+  <p class="lead" style="margin-top:24px;">The result is a portfolio that argues for itself — the experience <i>is</i> the case study.</p>
+</section>
+
+<section class="end">
+  <span class="kicker">Thanks for scrolling</span>
+  <h2 style="margin:12px 0 14px;">Design Lab</h2>
+  <p class="muted">Design &amp; build — Karina Kudina · behance.net/c142ac6f</p>
+</section>
+
+</main>
+</body>
+</html>

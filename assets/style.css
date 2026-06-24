@@ -947,3 +947,7 @@ section[id], div[id].anchor { scroll-margin-top: 70px; }
   /* lighter blur for gradient fields on mobile */
   .mesh::before, .mesh::after { filter: blur(30px); }
 }
+
+/* Showreel mode: hide cursor bits so the recording is clean */
+.reel .cursor, .reel .cursor-ring, .reel .cursor-trail { display: none !important; }
+.reel { cursor: none; }

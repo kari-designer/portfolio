@@ -274,3 +274,29 @@ document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date
   }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
   sections.forEach(s => spy.observe(s));
 })();
+
+// ===== Cover mode: hide the custom cursor when embedded in a mockup =====
+if (/[?&]cover/.test(location.search)) { document.body.classList.add('reel'); }
+
+// ===== Showreel mode: open index.html?reel to auto-scroll for screen recording =====
+(function () {
+  if (!/[?&]reel/.test(location.search)) return;
+  document.body.classList.add('reel');
+  const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function run() {
+    const total = document.documentElement.scrollHeight - innerHeight;
+    if (total <= 0) return;
+    const duration = Math.max(38000, total * 7.5); // ~ smooth, ~40–70s depending on length
+    let start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      let t = Math.min((ts - start) / duration, 1);
+      const e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; // easeInOutQuad
+      window.scrollTo(0, e * total);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  // wait a moment so you can start the screen recording first
+  window.addEventListener('load', () => setTimeout(run, reduce ? 100 : 1600));
+})();

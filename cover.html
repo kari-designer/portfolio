@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behance Cover Design Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #07070b; display: flex; justify-content: center; }
+  /* Behance cover ratio 808×632 → ×2 for crispness = 1616×1264 */
+  .canvas {
+    width: 1616px; height: 1264px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(108,92,255,.30), transparent 55%),
+      radial-gradient(110% 90% at 100% 100%, rgba(236,72,153,.26), transparent 55%),
+      linear-gradient(160deg, #0b0b12, #07070b 60%);
+    font-family: "Inter", sans-serif; color: #f3f4f7;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 78px 90px;
+  }
+  /* faint grid texture */
+  .canvas::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 0);
+    background-size: 34px 34px; opacity: .5; pointer-events: none;
+  }
+  /* glow blob */
+  .canvas::after {
+    content: ""; position: absolute; width: 760px; height: 760px; left: 50%; top: 8%;
+    transform: translateX(-50%); border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,108,255,.35), transparent 60%);
+    filter: blur(60px); pointer-events: none;
+  }
+
+  .top { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: #8b85ff; }
+  .brand b { font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+  .brand span { display: block; font-size: 13px; color: #a6abb8; font-weight: 500; margin-top: 2px; }
+  .year { font-size: 22px; font-weight: 700; letter-spacing: .12em; color: #a6abb8; }
+  .year b { color: #fff; }
+
+  .stage { position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; flex: 1; }
+
+  /* MacBook-style laptop */
+  .laptop { width: 1120px; position: relative; }
+  .lid {
+    border: 13px solid #1b1c23; border-radius: 22px; overflow: hidden; background: #000;
+    box-shadow: 0 50px 110px -34px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.05) inset;
+  }
+  .screen { aspect-ratio: 16 / 10; position: relative; background: #0d0e12; }
+  .screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 150px; height: 9px;
+    background: #1b1c23; border-radius: 0 0 9px 9px; z-index: 3; }
+  .deck {
+    width: 1262px; height: 30px; margin: -3px 0 0 -71px;
+    background: linear-gradient(180deg, #34363f 0%, #1a1b22 38%, #0c0d12 100%);
+    border-radius: 5px 5px 16px 16px;
+    box-shadow: 0 36px 60px -24px rgba(0,0,0,.75); position: relative;
+  }
+  .deck::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 150px; height: 10px; background: #08090d; border-radius: 0 0 12px 12px; }
+
+  .bottom { position: relative; z-index: 2; }
+  .bottom h1 { font-size: 62px; line-height: 1; font-weight: 800; letter-spacing: -.045em; }
+  .bottom h1 .ac { background: linear-gradient(100deg, #8b85ff, #ec4899);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .bottom p { margin-top: 16px; font-size: 19px; color: #a6abb8; letter-spacing: .02em; }
+  .tag { position: absolute; right: 0; bottom: 6px; display: flex; gap: 10px; }
+  .tag span { font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14); color: #cfd2da; background: rgba(255,255,255,.03); }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="top">
+      <div class="brand">
+        <span class="dot"></span>
+        <div><b>Design Lab</b><span>by Karina Kudina</span></div>
+      </div>
+      <div class="year">© <b>2026</b></div>
+    </div>
+
+    <div class="stage">
+      <div class="laptop">
+        <div class="lid">
+          <div class="screen">
+            <span class="notch"></span>
+            <iframe src="index.html?cover" title="Site" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class="deck"></div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <h1>Design that <span class="ac">stops the scroll</span></h1>
+      <p>Product Designer · UX / UI · Web · Kyiv</p>
+      <div class="tag"><span>UX / UI</span><span>Web Design</span><span>2026</span></div>
+    </div>
+  </div>
+
+  <script>
+    // keep the embedded site pinned to the hero (top), never scrolled
+    const f = document.querySelector('iframe');
+    f.addEventListener('load', () => { try { f.contentWindow.scrollTo(0, 0); } catch (e) {} });
+  </script>
+</body>
+</html>
