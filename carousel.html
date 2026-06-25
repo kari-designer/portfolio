@@ -7,129 +7,124 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
 <style>
-  /* force the site's DARK tokens regardless of OS theme */
-  :root {
-    --bg:#0d0e12; --bg-soft:#14151b; --bg-elev:#16171e; --ink:#f3f4f7;
-    --ink-soft:#a6abb8; --ink-faint:#6f7480; --line:#24262f;
-    --accent:#8b85ff; --accent-soft:#1b1c2b; --accent-ink:#b4afff;
-    --shadow-md:0 8px 40px rgba(0,0,0,.45);
-  }
-  * { box-sizing: border-box; }
-  body { background:#1b1b22; font-family:"Inter",sans-serif; display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px; margin:0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --accent:#8b85ff; --accent-ink:#b4afff; --line:#262833; --elev:#15161d; }
+  body { background:#1b1b22; font-family:"Inter",sans-serif; display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px; }
   .hint { color:#cfd2da; font-size:15px; text-align:center; max-width:1080px; }
   .hint b { color:#fff; }
 
   .slide {
     width:1080px; height:1350px; position:relative; overflow:hidden;
     background:
-      radial-gradient(120% 80% at 12% 0%, rgba(108,92,255,.28), transparent 52%),
-      radial-gradient(110% 80% at 100% 100%, rgba(236,72,153,.24), transparent 52%),
+      radial-gradient(120% 75% at 12% 0%, rgba(108,92,255,.26), transparent 50%),
+      radial-gradient(110% 75% at 100% 100%, rgba(236,72,153,.22), transparent 50%),
       linear-gradient(160deg, #0b0b12, #07070b 62%);
-    color:#f3f4f7; display:flex; flex-direction:column; justify-content:space-between; padding:90px 80px;
+    color:#f3f4f7; display:flex; flex-direction:column; justify-content:space-between; padding:96px 88px;
   }
-  .slide::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.045) 1px, transparent 0); background-size:36px 36px; opacity:.5; pointer-events:none; }
+  .slide::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0); background-size:38px 38px; opacity:.5; pointer-events:none; }
 
-  .head { position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; }
+  .head, .foot { position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; }
   .brand { display:flex; align-items:center; gap:12px; }
-  .brand .d { width:13px; height:13px; border-radius:50%; background:#8b85ff; }
-  .brand b { font-size:26px; font-weight:800; letter-spacing:-.02em; }
-  .pageno { font-size:18px; font-weight:700; letter-spacing:.14em; color:#8b8f99; }
-  .foot { position:relative; z-index:3; display:flex; align-items:center; justify-content:space-between; }
-  .swipe { font-size:22px; color:#b4afff; font-weight:600; display:flex; align-items:center; gap:12px; }
-  .swipe .ar { font-size:30px; }
-  .at { font-size:22px; color:#8b8f99; font-weight:600; }
+  .brand .d { width:13px; height:13px; border-radius:50%; background:var(--accent); }
+  .brand b { font-size:25px; font-weight:800; letter-spacing:-.02em; }
+  .pageno { font-size:17px; font-weight:700; letter-spacing:.14em; color:#8b8f99; }
+  .swipe { font-size:21px; color:var(--accent-ink); font-weight:600; display:flex; align-items:center; gap:11px; }
+  .swipe .ar { font-size:28px; }
+  .at { font-size:21px; color:#8b8f99; font-weight:600; }
 
-  .mid { position:relative; z-index:2; }
-  .kick { font-size:23px; letter-spacing:.2em; text-transform:uppercase; color:#b4afff; font-weight:600; }
-  .h { font-size:104px; line-height:.98; font-weight:800; letter-spacing:-.045em; margin-top:22px; }
-  .h2 { font-size:84px; line-height:1; font-weight:800; letter-spacing:-.04em; margin-top:20px; }
+  /* one centred content block per slide */
+  .mid { position:relative; z-index:2; margin:auto 0; width:100%; }
+  .mid.ctr { text-align:center; }
+  .kick { font-size:21px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent-ink); font-weight:600; }
+  .h { font-size:72px; line-height:1.02; font-weight:800; letter-spacing:-.04em; margin-top:24px; }
   .ac { background:linear-gradient(100deg,#8b85ff,#ec4899); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-  .t { font-size:40px; line-height:1.5; color:#c4c8d2; margin-top:28px; max-width:26ch; }
-  .cap { font-size:31px; color:#8b8f99; margin-top:22px; }
+  .t { font-size:33px; line-height:1.5; color:#c4c8d2; margin-top:28px; max-width:24ch; }
+  .mid.ctr .t { margin-inline:auto; }
+  .cap { font-size:26px; color:#8b8f99; margin-top:36px; }
 
-  /* hero slide bits */
-  .hero-meta2 { display:flex; gap:64px; margin-top:64px; }
-  .hero-meta2 .num { font-size:66px; font-weight:800; letter-spacing:-.03em; }
-  .hero-meta2 .lb { font-size:22px; color:#8b8f99; margin-top:4px; }
-  .hero-btns { display:flex; gap:16px; margin-top:40px; }
-  .hero-btns .btn { font-size:28px; padding:24px 38px; }
-  .hero-photo { position:absolute; right:-30px; bottom:-30px; width:610px; height:780px; border-radius:30px; overflow:hidden; z-index:1; opacity:.92;
-    -webkit-mask-image:linear-gradient(200deg,#000 62%,transparent); mask-image:linear-gradient(200deg,#000 62%,transparent); }
-  .hero-photo img { width:100%; height:100%; object-fit:cover; }
+  .stats { display:flex; gap:46px; margin-top:48px; }
+  .stats .s b { font-size:58px; font-weight:800; letter-spacing:-.03em; display:block; }
+  .stats .s span { font-size:20px; color:#8b8f99; margin-top:2px; }
 
-  /* big marquee text */
-  .mq { position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); white-space:nowrap; font-size:180px; font-weight:800; letter-spacing:-.04em; z-index:1; }
-  .mq .o { color:transparent; -webkit-text-stroke:2px #f3f4f7; }
-  .mq .st { color:#8b85ff; padding-inline:.3em; }
+  /* contained marquee band */
+  .mqbar { margin-top:54px; border-block:1px solid var(--line); padding:40px 0; overflow:hidden; }
+  .mqbar div { white-space:nowrap; font-size:80px; font-weight:800; letter-spacing:-.03em; text-align:center; }
+  .mqbar .o { color:transparent; -webkit-text-stroke:2px #f3f4f7; }
+  .mqbar .st { color:var(--accent); padding-inline:.25em; }
 
-  /* services tiles row */
-  .svc-row { display:flex; gap:30px; margin-top:74px; }
-  .stile { flex:1; }
-  .stile .n { font-size:124px; font-weight:800; line-height:1; color:transparent; -webkit-text-stroke:1.5px color-mix(in srgb, var(--accent) 45%, var(--line)); }
-  .stile .rule { height:2px; background:var(--line); margin:18px 0 14px; }
-  .stile h4 { font-size:40px; }
-  .stile p { font-size:27px; color:#a6abb8; margin-top:14px; }
+  /* services list */
+  .svc-list { list-style:none; margin-top:50px; display:grid; gap:0; }
+  .svc-list li { display:grid; grid-template-columns:120px 1fr; gap:30px; align-items:start; padding:34px 0; border-top:1px solid var(--line); }
+  .svc-list li:last-child { border-bottom:1px solid var(--line); }
+  .svc-list .n { font-size:64px; font-weight:800; line-height:.9; color:transparent; -webkit-text-stroke:1.5px color-mix(in srgb, var(--accent) 50%, var(--line)); }
+  .svc-list b { font-size:40px; letter-spacing:-.02em; display:block; }
+  .svc-list span { font-size:25px; color:#a6abb8; display:block; margin-top:10px; }
 
-  /* pricing */
-  .price-row { display:flex; gap:26px; margin-top:70px; }
-  .pcard { flex:1; border:1px solid var(--line); border-radius:20px; background:var(--bg-elev); padding:46px; }
-  .pcard.feat { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
-  .pcard h4 { font-size:36px; }
-  .pcard .amt { font-size:76px; font-weight:800; letter-spacing:-.03em; margin:14px 0 6px; }
-  .pcard .amt small { font-size:24px; color:#8b8f99; font-weight:500; }
-  .pcard .from { font-size:19px; color:#8b8f99; }
-  .pcard ul { list-style:none; margin:24px 0 0; padding:0; display:grid; gap:14px; }
-  .pcard li { font-size:26px; color:#c4c8d2; display:flex; gap:12px; }
-  .pcard li b { color:var(--accent); }
+  /* price list */
+  .price-list { list-style:none; margin-top:50px; }
+  .price-list li { display:flex; align-items:baseline; gap:24px; padding:32px 0; border-top:1px solid var(--line); }
+  .price-list li:last-child { border-bottom:1px solid var(--line); }
+  .price-list b { font-size:44px; font-weight:700; letter-spacing:-.02em; }
+  .price-list .lead { flex:1; border-bottom:2px dotted var(--line); transform:translateY(-10px); }
+  .price-list em { font-size:44px; font-weight:800; font-style:normal; }
+  .price-list em small { font-size:24px; color:#8b8f99; font-weight:500; }
 
-  /* timeline */
-  .tl { display:flex; gap:30px; position:relative; margin-top:90px; }
-  .tl::before { content:""; position:absolute; top:36px; left:30px; right:30px; height:2px; background:linear-gradient(90deg,transparent,#8b85ff,#ec4899,transparent); opacity:.6; }
-  .tnode { flex:1; }
-  .tdot { width:72px; height:72px; border-radius:50%; border:1px solid var(--line); background:var(--bg-elev); display:grid; place-items:center; font-weight:700; font-size:18px; color:var(--accent-ink); position:relative; z-index:1; }
-  .tnode h4 { font-size:28px; margin-top:26px; }
-  .tnode p { font-size:21px; color:#8b8f99; margin-top:6px; }
-
-  /* testimonial */
-  .quote2 { border:1px solid var(--line); border-radius:22px; background:var(--bg-elev); padding:58px; margin-top:74px; }
-  .quote2 .mk { font-size:90px; line-height:.5; color:#8b85ff; font-weight:800; }
-  .quote2 p { font-size:44px; line-height:1.4; margin:24px 0 28px; }
-  .quote2 .who { display:flex; align-items:center; gap:16px; }
-  .quote2 .av { width:60px; height:60px; border-radius:50%; background:var(--accent-soft); color:var(--accent); display:grid; place-items:end center; overflow:hidden; }
-  .quote2 .av svg { width:100%; height:100%; }
-  .quote2 b { font-size:22px; display:block; }
-  .quote2 .who span { font-size:18px; color:#8b8f99; }
+  /* steps list */
+  .steps { list-style:none; margin-top:50px; display:grid; gap:24px; }
+  .steps li { display:flex; align-items:center; gap:28px; font-size:42px; font-weight:700; letter-spacing:-.02em; }
+  .steps li i { width:70px; height:70px; flex-shrink:0; border-radius:50%; border:1px solid var(--line); background:var(--elev); display:grid; place-items:center; font-size:23px; font-style:normal; font-weight:700; color:var(--accent-ink); }
 
   /* device mockups */
-  .lap { display:flex; flex-direction:column; align-items:center; margin-top:54px; }
-  .lap .lid { width:980px; border:11px solid #1b1c23; border-radius:18px; overflow:hidden; background:#000; box-shadow:0 44px 90px -34px rgba(0,0,0,.85); }
+  .lap { display:flex; flex-direction:column; align-items:center; margin-top:56px; }
+  .lap .lid { width:920px; border:11px solid #1b1c23; border-radius:18px; overflow:hidden; background:#000; box-shadow:0 44px 90px -34px rgba(0,0,0,.85); }
   .lap .scr { aspect-ratio:16/10; position:relative; background:#0d0e12; }
   .lap iframe, .phone iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
-  .lap .deck { width:1080px; height:24px; margin-top:-2px; background:linear-gradient(180deg,#34363f,#1a1b22 38%,#0c0d12); border-radius:5px 5px 16px 16px; box-shadow:0 30px 50px -22px rgba(0,0,0,.7); position:relative; }
+  .lap .deck { width:1020px; height:24px; margin-top:-2px; background:linear-gradient(180deg,#34363f,#1a1b22 38%,#0c0d12); border-radius:5px 5px 16px 16px; box-shadow:0 30px 50px -22px rgba(0,0,0,.7); position:relative; }
   .lap .deck::before { content:""; position:absolute; top:0; left:50%; transform:translateX(-50%); width:130px; height:9px; background:#08090d; border-radius:0 0 11px 11px; }
-  .phone { margin:56px auto 0; width:440px; border:13px solid #1b1c23; border-radius:46px; overflow:hidden; background:#000; aspect-ratio:9/19; position:relative; box-shadow:0 44px 90px -34px rgba(0,0,0,.85); }
-  .phone .ntch { position:absolute; top:0; left:50%; transform:translateX(-50%); width:130px; height:26px; background:#1b1c23; border-radius:0 0 16px 16px; z-index:3; }
+  .phone { margin:56px auto 0; width:440px; border:13px solid #1b1c23; border-radius:48px; overflow:hidden; background:#000; aspect-ratio:9/19; position:relative; box-shadow:0 44px 90px -34px rgba(0,0,0,.85); }
+  .phone .ntch { position:absolute; top:0; left:50%; transform:translateX(-50%); width:128px; height:26px; background:#1b1c23; border-radius:0 0 16px 16px; z-index:3; }
 
-  .ctr { position:relative; z-index:2; margin:auto 0; text-align:center; }
-  .ctr .kick { display:block; }
-  .cta-btn { display:inline-block; margin-top:36px; background:#6c5cff; color:#fff; font-size:30px; font-weight:700; padding:22px 40px; border-radius:999px; }
+  /* testimonial */
+  .quote { border:1px solid var(--line); border-radius:24px; background:var(--elev); padding:56px; margin-top:52px; }
+  .quote .mk { font-size:96px; line-height:.4; color:var(--accent); font-weight:800; }
+  .quote p { font-size:42px; line-height:1.4; margin:30px 0 32px; }
+  .quote .who { display:flex; align-items:center; gap:18px; }
+  .quote .av { width:64px; height:64px; border-radius:50%; background:#1b1c2b; color:var(--accent); display:grid; place-items:end center; overflow:hidden; }
+  .quote .av svg { width:100%; height:100%; }
+  .quote .who b { font-size:24px; display:block; }
+  .quote .who span { font-size:19px; color:#8b8f99; }
+
+  /* details photo */
+  .photo { position:absolute; right:-30px; bottom:-30px; width:560px; height:720px; border-radius:32px; overflow:hidden; z-index:1; opacity:.9;
+    -webkit-mask-image:linear-gradient(210deg,#000 60%,transparent); mask-image:linear-gradient(210deg,#000 60%,transparent); }
+  .photo img { width:100%; height:100%; object-fit:cover; }
+
+  .cta-btn { display:inline-block; margin-top:40px; background:#6c5cff; color:#fff; font-size:30px; font-weight:700; padding:24px 42px; border-radius:999px; }
+
+  /* split layout (text + contained photo) */
+  .split { position:relative; z-index:2; margin:auto 0; display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center; }
+  .split .pic { aspect-ratio:4/5; border-radius:26px; overflow:hidden; border:1px solid var(--line); box-shadow:0 30px 70px -30px rgba(0,0,0,.7); }
+  .split .pic img { width:100%; height:100%; object-fit:cover; display:block; }
+  .split .t { max-width:none; }
 </style>
 </head>
 <body>
 
 <p class="hint">⬇️ Кожен слайд <b>1080×1350</b>. Знімай по черзі (Cmd+Shift+4). Слайди з мокапами підвантажують живий сайт дай секунду. Цей напис у знімок не потрапляє.</p>
 
-<!-- 01 HERO (real look) -->
+<!-- 01 HERO -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">01 / 10</div></div>
-  <div class="hero-photo"><img src="assets/karina-1.jpg" alt="" onerror="this.parentElement.style.display='none'"></div>
   <div class="mid">
     <span class="kick">Product Designer · UX/UI · 2026</span>
-    <div class="h">Дизайн, який <span class="ac">зупиняє скрол</span></div>
-    <div class="hero-btns"><span class="btn btn-primary" style="background:#6c5cff;color:#fff;">Обговорити проєкт</span><span class="btn btn-ghost">Роботи</span></div>
-    <div class="hero-meta2"><div><div class="num">3+</div><div class="lb">роки</div></div><div><div class="num">20+</div><div class="lb">проєктів</div></div><div><div class="num">90%</div><div class="lb">утримання</div></div></div>
+    <div class="h">Зробила сайт, який <span class="ac">продає замість мене</span></div>
+    <p class="t">Поки він переконує клієнтів, я спокійно пʼю каву. Чесний розподіл праці.</p>
+    <div class="stats">
+      <div class="s"><b>3+</b><span>роки</span></div>
+      <div class="s"><b>20+</b><span>проєктів</span></div>
+      <div class="s"><b>90%</b><span>утримання</span></div>
+    </div>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
 </section>
@@ -137,9 +132,9 @@
 <!-- 02 LAPTOP -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">02 / 10</div></div>
-  <div class="ctr">
-    <span class="kick">Ось він наживо</span>
-    <div class="h2" style="font-size:74px;">Як виглядає <span class="ac">сайт</span></div>
+  <div class="mid ctr">
+    <span class="kick">Наживо</span>
+    <div class="h">Подивись <span class="ac">зблизька</span></div>
     <div class="lap"><div class="lid"><div class="scr"><iframe src="index.html?cover" scrolling="no" title="site"></iframe></div></div><div class="deck"></div></div>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
@@ -148,22 +143,25 @@
 <!-- 03 MARQUEE -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">03 / 10</div></div>
-  <div class="mq">ЗУПИНИ СКРОЛ <span class="st">✦</span> <span class="o">ЕСТЕТИКА</span> <span class="st">✦</span> ПЛЮС KPI <span class="st">✦</span></div>
-  <div class="foot" style="margin-top:auto;"><span class="cap" style="margin:0;">навіть текст тут не стоїть на місці 😎</span></div>
+  <div class="mid ctr">
+    <span class="kick">Деталі, які чіпляють</span>
+    <div class="h">Тут навіть текст<br><span class="ac">не стоїть на місці</span></div>
+    <div class="mqbar"><div>ЗУПИНИ СКРОЛ <span class="st">✦</span> <span class="o">ЕСТЕТИКА</span> <span class="st">✦</span> ПЛЮС KPI</div></div>
+  </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
 </section>
 
-<!-- 04 SERVICES (Swiss) -->
+<!-- 04 SERVICES -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">04 / 10</div></div>
   <div class="mid">
     <span class="kick">Що я реально роблю</span>
-    <div class="h2" style="font-size:74px;">Послуги без <span class="ac">води</span></div>
-    <div class="svc-row">
-      <div class="stile"><div class="n">01</div><div class="rule"></div><h4>Корпоративні сайти</h4><p>Виглядають дорого, навіть коли бюджет ще мовчить.</p></div>
-      <div class="stile"><div class="n">02</div><div class="rule"></div><h4>Лендинги</h4><p>Настільки під конверсію, що аж незручно.</p></div>
-      <div class="stile"><div class="n">03</div><div class="rule"></div><h4>Сайти бренду</h4><p>Продають тебе як експерта, а не просто гарне фото.</p></div>
-    </div>
+    <div class="h">Послуги без <span class="ac">води</span></div>
+    <ul class="svc-list">
+      <li><span class="n">01</span><div><b>Корпоративні сайти</b><span>Виглядають дорого, навіть коли бюджет ще мовчить.</span></div></li>
+      <li><span class="n">02</span><div><b>Лендинги</b><span>Настільки під конверсію, що аж незручно.</span></div></li>
+      <li><span class="n">03</span><div><b>Сайти бренду</b><span>Продають тебе як експерта, а не просто гарне фото.</span></div></li>
+    </ul>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
 </section>
@@ -173,12 +171,13 @@
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">05 / 10</div></div>
   <div class="mid">
     <span class="kick">Ціни</span>
-    <div class="h2" style="font-size:74px;">Без дрібного <span class="ac">шрифту</span></div>
-    <div class="price-row">
-      <div class="pcard"><h4>Лендінг</h4><div class="amt"><small>від</small> €200</div><div class="from">одна сторінка під конверсію</div><ul><li><b>✓</b> mobile-first</li><li><b>✓</b> 2 раунди правок</li><li><b>✓</b> готовий Figma</li></ul></div>
-      <div class="pcard feat"><h4>UI-екран</h4><div class="amt"><small>від</small> €50</div><div class="from">масштабується під продукт</div><ul><li><b>✓</b> веб і мобайл</li><li><b>✓</b> усі стани</li><li><b>✓</b> знижки за обсяг</li></ul></div>
-    </div>
-    <p class="cap">Бюджет скромний чи королівський мені без різниці.</p>
+    <div class="h">Без дрібного <span class="ac">шрифту</span></div>
+    <ul class="price-list">
+      <li><b>Лендінг</b><span class="lead"></span><em><small>від</small> €200</em></li>
+      <li><b>UI-екран</b><span class="lead"></span><em><small>від</small> €50</em></li>
+      <li><b>Повний продукт</b><span class="lead"></span><em>кастомно</em></li>
+    </ul>
+    <p class="cap">Бюджет скромний чи королівський, мені без різниці.</p>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
 </section>
@@ -188,15 +187,14 @@
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">06 / 10</div></div>
   <div class="mid">
     <span class="kick">Процес</span>
-    <div class="h2" style="font-size:74px;">Від брифу до <span class="ac">кайфу</span></div>
-    <div class="tl">
-      <div class="tnode"><div class="tdot">01</div><h4>Бриф</h4><p>цілі й метрики</p></div>
-      <div class="tnode"><div class="tdot">02</div><h4>Дослідж.</h4><p>де болить</p></div>
-      <div class="tnode"><div class="tdot">03</div><h4>Вайрфрейми</h4><p>скелет</p></div>
-      <div class="tnode"><div class="tdot">04</div><h4>UI</h4><p>краса</p></div>
-      <div class="tnode"><div class="tdot">05</div><h4>Хендоф</h4><p>і підтримка</p></div>
-    </div>
-    <p class="cap">Той самий каркас щоразу, без хаосу й паніки «давай усе переробимо».</p>
+    <div class="h">Від брифу до <span class="ac">кайфу</span></div>
+    <ul class="steps">
+      <li><i>01</i> Бриф і цілі</li>
+      <li><i>02</i> Дослідження</li>
+      <li><i>03</i> Вайрфрейми</li>
+      <li><i>04</i> UI-дизайн</li>
+      <li><i>05</i> Хендоф і підтримка</li>
+    </ul>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
 </section>
@@ -204,9 +202,9 @@
 <!-- 07 PHONE -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">07 / 10</div></div>
-  <div class="ctr">
+  <div class="mid ctr">
     <span class="kick">І на телефоні</span>
-    <div class="h2" style="font-size:74px;">Так само <span class="ac">смачно</span></div>
+    <div class="h">Так само <span class="ac">смачно</span></div>
     <div class="phone"><span class="ntch"></span><iframe src="index.html?cover" scrolling="no" title="mobile"></iframe></div>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
@@ -217,8 +215,8 @@
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">08 / 10</div></div>
   <div class="mid">
     <span class="kick">Відгуки</span>
-    <div class="h2" style="font-size:74px;">Не я одна так <span class="ac">думаю</span></div>
-    <div class="quote2">
+    <div class="h">Не я одна так <span class="ac">думаю</span></div>
+    <div class="quote">
       <span class="mk">“</span>
       <p>Лендінг, який вона зробила, помітно підняв нам конверсію за перший місяць. І виглядає дорого.</p>
       <div class="who"><span class="av"><svg viewBox="0 0 46 46" fill="currentColor"><circle cx="23" cy="18" r="8"/><path d="M7 44c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg></span><div><b>Olena K.</b><span>Маркетинг-лід, e-commerce</span></div></div>
@@ -230,10 +228,13 @@
 <!-- 09 DETAILS -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">09 / 10</div></div>
-  <div class="mid" style="margin:auto 0;">
-    <span class="kick">Під капотом</span>
-    <div class="h2">Двомовний,<br>швидкий, <span class="ac">живий</span></div>
-    <p class="t">UA / EN в один клік. На телефоні не лагає. Заявки доходять, а не зникають у безвісти, як мої гроші перед зарплатою.</p>
+  <div class="split">
+    <div>
+      <span class="kick">Під капотом</span>
+      <div class="h">Двомовний,<br>швидкий, <span class="ac">живий</span></div>
+      <p class="t">UA / EN в один клік. На телефоні не лагає. Заявки доходять, а не зникають у безвісти, як зарплата.</p>
+    </div>
+    <div class="pic"><img src="assets/karina-1.jpg" alt="" onerror="this.closest('.pic').style.display='none'"></div>
   </div>
   <div class="foot"><span class="swipe">Гортай <span class="ar">→</span></span><span class="at">@kari_kdn</span></div>
 </section>
@@ -241,10 +242,10 @@
 <!-- 10 CTA -->
 <section class="slide">
   <div class="head"><div class="brand"><span class="d"></span><b>Design Lab</b></div><div class="pageno">10 / 10</div></div>
-  <div class="ctr">
+  <div class="mid ctr">
     <span class="kick">Хочеш такий самий?</span>
-    <div class="h2">Зроблю під <span class="ac">будь-який бюджет</span></div>
-    <p class="t" style="margin-inline:auto;">Пиши в директ, поки я в настрої. Або тисни «Обговорити проєкт» на сайті.</p>
+    <div class="h">Зроблю під <span class="ac">будь-який бюджет</span></div>
+    <p class="t">Пиши в дірект, поки я в настрої. Або тисни «Обговорити проєкт» на сайті.</p>
     <a class="cta-btn">karidesigner.netlify.app</a>
   </div>
   <div class="foot"><span class="swipe">💾 Зберігай, поки безкоштовно</span><span class="at">@kari_kdn · Behance</span></div>

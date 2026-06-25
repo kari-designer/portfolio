@@ -8,7 +8,7 @@
   --bg-elev: #ffffff;
   --ink: #14151a;
   --ink-soft: #585c66;
-  --ink-faint: #8b8f99;
+  --ink-faint: #6c707b;
   --line: #e8e8e4;
   --accent: #4f46e5;
   --accent-soft: #eef0ff;
@@ -30,7 +30,7 @@
     --bg-elev: #16171e;
     --ink: #f3f4f7;
     --ink-soft: #a6abb8;
-    --ink-faint: #6f7480;
+    --ink-faint: #828791;
     --line: #24262f;
     --accent: #8b85ff;
     --accent-soft: #1b1c2b;
@@ -73,7 +73,8 @@ h2 { font-size: clamp(30px, 4.4vw, 48px); }
 h3 { font-size: clamp(20px, 2.4vw, 26px); }
 .lead { font-size: clamp(18px, 2.2vw, 22px); color: var(--ink-soft); line-height: 1.55; }
 .muted { color: var(--ink-soft); }
-.section-head { max-width: 640px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-head { max-width: 840px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-head h2 { text-wrap: balance; }
 .section-head h2 { margin-top: 14px; }
 .section-head p { margin-top: 16px; }
 
@@ -504,8 +505,8 @@ h3 { font-size: clamp(20px, 2.4vw, 26px); }
 .exp-about { position: relative; padding-block: clamp(64px, 10vw, 150px); overflow: hidden; }
 .exp-about .big-num { position: absolute; right: 1vw; top: 4%; font-size: 15vw; font-weight: 800; line-height: 1; opacity: .6;
   color: transparent; -webkit-text-stroke: 1px var(--line); z-index: 0; pointer-events: none; }
-.exp-about .inner { position: relative; z-index: 2; max-width: 600px; }
-.exp-about h2 { font-size: clamp(30px, 4.6vw, 58px); line-height: 1.0; margin-bottom: 26px; }
+.exp-about .inner { position: relative; z-index: 2; max-width: 800px; }
+.exp-about h2 { font-size: clamp(28px, 3.6vw, 50px); line-height: 1.04; margin-bottom: 26px; text-wrap: balance; }
 .exp-about p { font-size: clamp(16px, 1.55vw, 19px); line-height: 1.65; color: var(--ink-soft); max-width: 52ch; margin-bottom: 16px; }
 .exp-about .floatimg { position: absolute; right: 6vw; bottom: 10%; width: min(36vw, 440px); aspect-ratio: 4/5;
   border-radius: 14px; overflow: hidden; z-index: 1; box-shadow: var(--shadow-md); }
@@ -951,3 +952,27 @@ section[id], div[id].anchor { scroll-margin-top: 70px; }
 /* Showreel mode: hide cursor bits so the recording is clean */
 .reel .cursor, .reel .cursor-ring, .reel .cursor-trail { display: none !important; }
 .reel { cursor: none; }
+
+/* ===== UX: consistent, accessible buttons ===== */
+.btn { min-height: 50px; }                          /* comfortable tap target */
+.hero2 .hero-actions .btn { width: 240px; justify-content: center; }   /* paired = equal width */
+.price .btn { width: 100%; justify-content: center; }                  /* full-width inside cards */
+
+@media (max-width: 640px) {
+  .hero2 .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero2 .hero-actions .btn { width: 100%; }
+  .center .btn, .cta-band .btn, .price .btn, .budget-note .btn { width: 100%; justify-content: center; }
+  .btn { min-height: 54px; font-size: 16px; }       /* bigger touch target on mobile */
+}
+
+/* ===== UX/a11y: visible keyboard focus ===== */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+.btn:focus-visible, .lang-toggle:focus-visible, .nav-toggle:focus-visible,
+.nav-links a:focus-visible, .ss-nav button:focus-visible { outline-offset: 4px; }
+.field input:focus-visible, .field textarea:focus-visible, .field select:focus-visible { outline: none; } /* these already show a focus ring */
+.has-cursor :focus-visible { outline: 2px solid var(--accent); }  /* keep focus ring even with custom cursor */
+
+/* Skip-to-content link */
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--accent); color: #fff;
+  padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 14px; transition: top .2s var(--ease); }
+.skip-link:focus { top: 16px; }
