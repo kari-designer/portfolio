@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>design lab · Product Designer (UI/UX)</title>
 <meta name="description" content="design lab · продуктовий дизайнер (UI/UX) з Києва. Нешаблонні дизайни, що змушують зупинити скрол.">
-<meta name="theme-color" content="#4f46e5">
+<meta name="theme-color" content="#060606">
 <meta property="og:title" content="design lab · Product Designer (UI/UX)">
 <meta property="og:description" content="Я роблю нешаблонні дизайни, які змушують зупинити скрол.">
 <meta property="og:type" content="website">
@@ -20,115 +20,95 @@
 <meta name="twitter:image" content="https://karidesigner.netlify.app/assets/og-cover.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://karidesigner.netlify.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%234f46e5'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23060606'/%3E%3Crect x='6' y='6' width='20' height='20' fill='%23EDEBE6'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Karina Kudina","jobTitle":"Product Designer (UI/UX)","email":"karinakudina762@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Kyiv","addressCountry":"UA"},"sameAs":["https://t.me/kari_kdn","https://www.instagram.com/kari_kdn","https://www.behance.net/c142ac6f"]}
 </script>
 </head>
-<body class="exp">
+<body>
 <a class="skip-link" href="#main" data-en="Skip to content">Перейти до вмісту</a>
-<div class="cursor" aria-hidden="true"></div>
-<div class="cursor-ring" aria-hidden="true"></div>
 
 <header class="site-header">
-  <nav class="nav wrap" aria-label="Primary">
-    <a class="brand" href="#top"><span class="dot"></span><span class="brand-lock">Design Lab<small>by Karina Kudina</small></span></a>
-    <div class="nav-links" id="nav">
+  <a class="brand" href="#top">Design Lab — Karina Kudina</a>
+  <div style="display:flex;align-items:center;gap:18px;">
+    <nav class="nav-links" id="nav" aria-label="Primary">
       <a href="#about" data-en="About">Про мене</a>
-      <a href="#work" data-en="Work">Портфоліо</a>
+      <a href="#work" data-en="Work">Роботи</a>
       <a href="#services" data-en="Services">Послуги</a>
       <a href="#mentoring" data-en="Mentoring">Менторство</a>
       <a href="#pricing" data-en="Pricing">Ціни</a>
-      <a class="btn btn-primary nav-cta" href="#contact" data-en="Discuss a project">Обговорити проєкт</a>
-    </div>
+      <a href="#contact" data-en="Contact">Контакт</a>
+    </nav>
     <button class="lang-toggle" data-lang-label aria-label="Switch language">ENG</button>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
-  </nav>
+  </div>
 </header>
 
 <main id="main" tabindex="-1" style="outline:none;">
-<!-- ===== HERO ===== -->
-<section class="hero2" id="top">
-  <div class="hero2-bg" data-speed="0.12" data-en="DESIGN">ДИЗАЙН</div>
-  <div class="wrap hero2-grid">
-    <div class="hero2-copy">
-      <span class="eyebrow" data-en="Product Designer (UI/UX) · Kyiv">Product Designer (UI/UX) · Київ</span>
-      <h1 data-en="Design that <span class='accent'>stops the scroll</span>">Дизайн, який <span class="accent">зупиняє скрол</span></h1>
-      <p class="lead" data-en="I make non-template interfaces you can't scroll past. Aesthetics here aren't for beauty, they make the KPIs cry happy tears.">Роблю нешаблонні інтерфейси, повз які важко проскролити. Естетика тут не для краси, а щоб KPI плакали від щастя.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary hoverable" href="#work" data-en="View my work">Дивитися роботи
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost hoverable" href="#contact" data-en="Let's talk">Зв'язатися</a>
+<!-- ===== HERO: full-bleed ===== -->
+<section class="hero" id="top">
+  <div class="hero-img"><img src="assets/karina-1-web.jpg" alt="Каріна Кудіна" loading="eager" fetchpriority="high"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Product Designer (UI/UX) · Kyiv</div>
+    <h1 data-en="Design that<br><b>stops the scroll</b>">Дизайн, який<br><b>зупиняє скрол</b></h1>
+    <div class="hero-foot">
+      <p class="lead" data-en="Non-template interfaces you can't scroll past. <b>Aesthetics not for beauty, but to make the KPIs cry happy tears.</b>">Нешаблонні інтерфейси, повз які важко проскролити. <b>Естетика не для краси, а щоб KPI плакали від щастя.</b></p>
+      <div class="hero-cta">
+        <a class="btn" href="#work" data-en="View my work">Дивитися роботи</a>
+        <a class="btn btn-ghost" href="#contact" data-en="Let's talk">Зв'язатися</a>
       </div>
-      <div class="hero-meta">
-        <div><div class="num">3+</div><div class="lbl" data-en="Years in design">Роки в дизайні</div></div>
-        <div><div class="num">20+</div><div class="lbl" data-en="Projects shipped">Проєктів</div></div>
-        <div><div class="num">90%</div><div class="lbl" data-en="Client retention">Утримання</div></div>
-      </div>
-      <div class="hero-social">
-        <a href="https://t.me/kari_kdn" target="_blank" rel="noopener">Telegram</a>
-        <span class="sep">/</span>
-        <a href="https://www.instagram.com/kari_kdn" target="_blank" rel="noopener">Instagram</a>
-        <span class="sep">/</span>
-        <a href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener">Behance</a>
-        <span class="sep">/</span>
-        <a href="mailto:karinakudina762@gmail.com">Email</a>
-      </div>
-    </div>
-    <div class="hero2-photo" data-depth="0.6">
-      <span class="chip c1" data-depth="1.6">UI · UX</span>
-      <span class="chip c2" data-depth="2">Figma</span>
-      <span class="chip c3" data-depth="1.3" data-en="Aesthetics + KPI">Естетика + KPI</span>
-      <div class="photo-mask cursor-xl shine">
-        <img src="assets/karina-1.jpg" alt="Каріна Кудіна" loading="eager" onerror="this.parentElement.style.background='var(--bg-soft)'">
-      </div>
+      <span class="scroll-hint">scroll ↓</span>
     </div>
   </div>
 </section>
 
-<!-- ===== VELOCITY MARQUEE ===== -->
-<section class="vel" aria-hidden="true">
-  <div class="vel-track">
-    <span data-en="STOP THE SCROLL">ЗУПИНИ СКРОЛ</span><span class="star">✦</span><span class="o" data-en="AESTHETICS">ЕСТЕТИКА</span><span class="star">✦</span><span data-en="PLUS KPI">ПЛЮС KPI</span><span class="star">✦</span>
-    <span data-en="STOP THE SCROLL">ЗУПИНИ СКРОЛ</span><span class="star">✦</span><span class="o" data-en="AESTHETICS">ЕСТЕТИКА</span><span class="star">✦</span><span data-en="PLUS KPI">ПЛЮС KPI</span><span class="star">✦</span>
-  </div>
-</section>
+<div class="hero-meta">
+  <div><div class="num">3+</div><div class="lbl" data-en="Years in design">Роки в дизайні</div></div>
+  <div><div class="num">20+</div><div class="lbl" data-en="Projects shipped">Проєктів</div></div>
+  <div><div class="num">90%</div><div class="lbl" data-en="Client retention">Утримання клієнтів</div></div>
+</div>
 
-<!-- ===== ABOUT ===== -->
-<section class="exp-about" id="about">
-  <div class="big-num" data-speed="-0.07" aria-hidden="true" data-en="KK">КК</div>
-  <div class="floatimg shine" data-speed="-0.05"><img src="assets/karina-2.jpg" alt="" loading="lazy"></div>
-  <div class="wrap">
-    <div class="inner reveal">
+<!-- ===== ABOUT · feature block ===== -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <img src="assets/karina-2-web.jpg" alt="Каріна Кудіна" loading="lazy">
+      <span class="stamp">ex-Amazon</span>
+    </div>
+    <div class="about-copy reveal">
       <span class="eyebrow" data-en="About">Про мене</span>
-      <h2 class="mt-s" data-en="From Amazon spreadsheets to pixels that perform">Від табличок в Amazon до пікселів, що працюють</h2>
+      <h2 data-en="From Amazon spreadsheets to <span class='hl'>pixels that perform</span>">Від табличок в Amazon до <span class="hl">пікселів, що працюють</span></h2>
       <p data-en="I was an analyst at Amazon, fully convinced creativity wasn't my thing. Then product design happened: grids, scenarios, architecture. Surprise.">Колись я була аналітикинею в Amazon і свято вірила, що творчість не для мене. А потім трапився продакт-дизайн: сітки, сценарії, архітектура. Сюрприз.</p>
-      <p data-en="That mix is the whole point: aesthetics plus KPIs. A design can be gorgeous, but if it doesn't move the metric, it's just a nice screenshot.">Саме це поєднання і є сенс: естетика плюс KPI. Дизайн може бути шикарним, але якщо він не рухає метрику, це просто гарний скриншот.</p>
+      <p data-en="That mix is the whole point: <b>aesthetics plus KPIs.</b> A design can be gorgeous, but if it doesn't move the metric, it's just a nice screenshot.">Саме це поєднання і є сенс: <b>естетика плюс KPI.</b> Дизайн може бути шикарним, але якщо він не рухає метрику, це просто гарний скриншот.</p>
       <p data-en="Now I'm aesthetically annoying about every pixel. Yes, I align spacings at 3 a.m. No, I don't need help.">Тепер я душню естетично над кожним пікселем. Так, рівняю відступи о третій ночі. Ні, допомога не потрібна.</p>
+      <div class="fact-row">
+        <span class="fact" data-en="Analytics brain">Мозок аналітика</span>
+        <span class="fact" data-en="Designer's eye">Око дизайнера</span>
+        <span class="fact" data-en="Spacings at 3 a.m.">Відступи о 3:00</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== SKILLS ===== -->
-<section id="skills" style="background:var(--bg-soft);">
+<section id="skills">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" data-en="Skills & tools">Навички та інструменти</span>
-      <h2 class="mt-s" data-en="The stuff I am dangerously good at">Те, у чому я небезпечно гарна</h2>
+      <div>
+        <span class="eyebrow" data-en="Skills & tools">Навички та інструменти</span>
+        <h2 data-en="The stuff I am <b>dangerously</b> good at">Те, у чому я <b>небезпечно</b> гарна</h2>
+      </div>
+      <span class="idx">(12)</span>
     </div>
-    <div class="skill-pills reveal">
-      <span>Figma</span><span data-en="UX research">UX-дослідження</span><span data-en="Prototyping">Прототипування</span>
-      <span data-en="Wireframing">Вайрфрейми</span><span data-en="User flows">User flows</span>
-      <span data-en="Information architecture">Інформаційна архітектура</span><span data-en="Usability testing">Юзабіліті-тести</span>
-      <span data-en="Interaction design">Інтеракції</span><span data-en="Responsive / mobile-first">Адаптив / mobile-first</span>
-      <span>AI tools</span><span>Photoshop</span><span data-en="Turnkey websites">Сайти під ключ</span>
-    </div>
-    <div class="grid cols-4 align-titles" style="margin-top:40px;">
+    <p class="skill-list reveal">
+      <span>Figma</span><span class="sep">/</span><span data-en="UX research">UX-дослідження</span><span class="sep">/</span><span data-en="Prototyping">Прототипування</span><span class="sep">/</span><span data-en="Wireframing">Вайрфрейми</span><span class="sep">/</span><span>User flows</span><span class="sep">/</span><span data-en="Information architecture">Інформаційна архітектура</span><span class="sep">/</span><span data-en="Usability testing">Юзабіліті-тести</span><span class="sep">/</span><span data-en="Interaction design">Інтеракції</span><span class="sep">/</span><span data-en="Responsive / mobile-first">Адаптив / mobile-first</span><span class="sep">/</span><span>AI tools</span><span class="sep">/</span><span>Photoshop</span><span class="sep">/</span><span data-en="Turnkey websites">Сайти під ключ</span>
+    </p>
+    <div class="grid cols-4 mt-l">
       <div class="card reveal"><h3 data-en="Communication">Комунікація</h3><p data-en="Clear, frequent updates and reasoning you can follow.">Зрозумілі регулярні апдейти й аргументи, які легко відстежити.</p></div>
       <div class="card reveal"><h3 data-en="Problem solving">Розв'язання задач</h3><p data-en="Reframing fuzzy briefs into solvable design problems.">Перетворюю розмиті брифи на чіткі дизайн-задачі.</p></div>
       <div class="card reveal"><h3 data-en="Attention to detail">Увага до деталей</h3><p data-en="The small things that make products feel premium.">Дрібниці, від яких продукт відчувається преміально.</p></div>
@@ -137,153 +117,104 @@
   </div>
 </section>
 
-<!-- ===== WORK / PORTFOLIO ===== -->
+<!-- ===== WORK · feature block ===== -->
 <section id="work">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" data-en="Selected work">Вибрані роботи</span>
-      <h2 class="mt-s" data-en="Portfolio (mostly under NDA, thanks lawyers)">Портфоліо (здебільшого під NDA, дякую юристам)</h2>
-      <p class="muted" data-en="Most of my product work is under NDA, so the full case studies live on Behance.">Більшість продуктових робіт під NDA, тож повні кейси живуть на Behance.</p>
+      <h2 data-en="Portfolio <span class='idx'>(06)</span>">Портфоліо <span class="idx">(06)</span></h2>
+      <p class="muted" data-en="Mostly under NDA, thanks lawyers. Full case studies live on Behance.">Здебільшого під NDA, дякую юристам. Повні кейси живуть на Behance.</p>
     </div>
-    <a class="card work-feature reveal hoverable" href="https://www.behance.net/gallery/241196979/Landing-Page-Modeling-Agency-Website" target="_blank" rel="noopener">
-      <div class="wf-img shine">
-        <div class="mesh"></div>
-        <img src="assets/work-modeling.jpg" alt="Landing Page · Modeling Agency" loading="lazy" onerror="this.onerror=null;this.src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/798dba241196979.6951610e98534.png'">
-      </div>
-      <div class="wf-body">
-        <div class="tags"><span class="tag" data-en="Landing">Лендінг</span><span class="tag" data-en="Live case">Живий кейс</span></div>
-        <h3 data-en="Landing · Modeling Agency">Лендінг · модельна агенція</h3>
-        <p data-en="A minimalist landing focused on clarity, hierarchy and visual balance.">Мінімалістичний лендінг із фокусом на чіткість, ієрархію та візуальний баланс.</p>
-        <span class="more" data-en="View case on Behance">Дивитись кейс на Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-      </div>
-    </a>
-    <div class="work-grid">
-      <a class="card wcard reveal hoverable" href="https://www.behance.net/gallery/239406881/Real-Estate-Landing-Page-Website-Design-UIUX" target="_blank" rel="noopener">
-        <div class="wc-thumb shine"><div class="mesh"></div><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/762aae239406881.69285c973c2f3.png" alt="Real Estate Landing Page" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="wc-body">
-          <div class="tags"><span class="tag" data-en="Real estate">Нерухомість</span><span class="tag" data-en="Landing">Лендінг</span></div>
+    <div class="works">
+      <a class="work reveal" href="https://www.behance.net/gallery/241196979/Landing-Page-Modeling-Agency-Website" target="_blank" rel="noopener">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/798dba241196979.6951610e98534.png" alt="Landing Page · Modeling Agency" loading="lazy">
+        <div>
+          <span class="wnum">/01</span>
+          <h3 data-en="Landing · Modeling Agency">Лендінг · модельна агенція</h3>
+          <p data-en="A minimalist landing focused on clarity, hierarchy and visual balance.">Мінімалістичний лендінг із фокусом на чіткість, ієрархію та візуальний баланс.</p>
+          <div class="meta" data-en="landing / live case / behance ↗">лендінг / живий кейс / behance ↗</div>
+        </div>
+      </a>
+      <a class="work reveal" href="https://www.behance.net/gallery/239406881/Real-Estate-Landing-Page-Website-Design-UIUX" target="_blank" rel="noopener">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/762aae239406881.69285c973c2f3.png" alt="Real Estate Landing Page" loading="lazy">
+        <div>
+          <span class="wnum">/02</span>
           <h3 data-en="Real Estate Landing">Лендінг нерухомості</h3>
-          <span class="more" data-en="View on Behance">Дивитись на Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <div class="meta" data-en="real estate / landing / behance ↗">нерухомість / лендінг / behance ↗</div>
         </div>
       </a>
-      <a class="card wcard reveal hoverable" href="https://www.behance.net/gallery/230342097/NFT-landing-page-Website-UIUX" target="_blank" rel="noopener">
-        <div class="wc-thumb shine"><div class="mesh" style="--accent:#10b981;"></div><img src="assets/work-nft-pink.jpg" alt="NFT Landing Page" loading="lazy" onerror="this.onerror=null;this.src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/b26b66230342097.6876973c1d473.png'"></div>
-        <div class="wc-body">
-          <div class="tags"><span class="tag">NFT</span><span class="tag" data-en="Landing">Лендінг</span></div>
+      <a class="work reveal" href="https://www.behance.net/gallery/230342097/NFT-landing-page-Website-UIUX" target="_blank" rel="noopener">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/b26b66230342097.6876973c1d473.png" alt="NFT Landing Page" loading="lazy">
+        <div>
+          <span class="wnum">/03</span>
           <h3 data-en="NFT Landing Page">NFT-лендінг</h3>
-          <span class="more" data-en="View on Behance">Дивитись на Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <div class="meta">nft / behance ↗</div>
         </div>
       </a>
-      <a class="card wcard reveal hoverable" href="https://www.behance.net/gallery/251099377/UIUX-Product-design-105-West-Brewing" target="_blank" rel="noopener">
-        <div class="wc-thumb shine"><div class="mesh" style="--accent:#f59e0b;"></div><img src="assets/work-brewing.jpg" alt="105 West Brewing · Product Design" loading="lazy" onerror="this.onerror=null;this.src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/d597c4251099377.6a2ef6827ccd2.png'"></div>
-        <div class="wc-body">
-          <div class="tags"><span class="tag" data-en="Product">Продукт</span><span class="tag">UI/UX</span></div>
-          <h3 data-en="105 West Brewing">105 West Brewing</h3>
-          <span class="more" data-en="View on Behance">Дивитись на Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      <a class="work reveal" href="https://www.behance.net/gallery/251099377/UIUX-Product-design-105-West-Brewing" target="_blank" rel="noopener">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/d597c4251099377.6a2ef6827ccd2.png" alt="105 West Brewing · Product Design" loading="lazy">
+        <div>
+          <span class="wnum">/04</span>
+          <h3>105 West Brewing</h3>
+          <div class="meta" data-en="product / ui/ux / behance ↗">продукт / ui/ux / behance ↗</div>
         </div>
       </a>
-      <a class="card wcard reveal hoverable" href="https://www.behance.net/gallery/244166471/NFT-Landing-Page-Design-3D-Creative-Concept" target="_blank" rel="noopener">
-        <div class="wc-thumb shine"><div class="mesh" style="--accent:#ec4899;"></div><img src="assets/work-nft-skull.jpg" alt="NFT 3D Creative Concept" loading="lazy" onerror="this.onerror=null;this.src='https://mir-s3-cdn-cf.behance.net/project_modules/1400/90505e244166471.69919f93a2344.png'"></div>
-        <div class="wc-body">
-          <div class="tags"><span class="tag">NFT</span><span class="tag">3D</span></div>
+      <a class="work reveal" href="https://www.behance.net/gallery/244166471/NFT-Landing-Page-Design-3D-Creative-Concept" target="_blank" rel="noopener">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/90505e244166471.69919f93a2344.png" alt="NFT 3D Creative Concept" loading="lazy">
+        <div>
+          <span class="wnum">/05</span>
           <h3 data-en="NFT 3D Concept">NFT 3D-концепт</h3>
-          <span class="more" data-en="View on Behance">Дивитись на Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <div class="meta">nft / 3d / behance ↗</div>
         </div>
       </a>
-      <a class="card wcard reveal hoverable" href="https://www.behance.net/gallery/232646211/Landing-page-Digital-Website-Marketing-Agency" target="_blank" rel="noopener">
-        <div class="wc-thumb shine"><div class="mesh" style="--accent:#0ea5e9;"></div><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/044519232646211.68a07af674858.png" alt="Marketing Agency Landing" loading="lazy" onerror="this.style.display='none'"></div>
-        <div class="wc-body">
-          <div class="tags"><span class="tag" data-en="Marketing">Маркетинг</span><span class="tag" data-en="Landing">Лендінг</span></div>
+      <a class="work reveal" href="https://www.behance.net/gallery/232646211/Landing-page-Digital-Website-Marketing-Agency" target="_blank" rel="noopener">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/044519232646211.68a07af674858.png" alt="Marketing Agency Landing" loading="lazy">
+        <div>
+          <span class="wnum">/06</span>
           <h3 data-en="Marketing Agency Landing">Лендінг маркетинг-агенції</h3>
-          <span class="more" data-en="View on Behance">Дивитись на Behance <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </div>
-      </a>
-      <a class="card wcard reveal hoverable" href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px;">
-        <div class="wc-body" style="padding:28px;">
-          <h3 data-en="More on Behance">Більше на Behance</h3>
-          <span class="more" data-en="Open profile">Відкрити профіль <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <div class="meta" data-en="marketing / landing / behance ↗">маркетинг / лендінг / behance ↗</div>
         </div>
       </a>
     </div>
-    <div class="center mt-m reveal">
-      <a class="btn btn-primary hoverable" href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener" data-en="Open my Behance">Відкрити мій Behance
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+    <div class="work-cta mt-l reveal">
+      <a class="btn" href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener" data-en="More on Behance ↗">Більше на Behance ↗</a>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES (interactive list) ===== -->
+<!-- ===== SERVICES ===== -->
 <section id="services">
-  <div class="wrap">
-    <div class="ss-head reveal">
-      <span class="ss-label" data-en="↳ Services">↳ Послуги</span>
-      <span class="ss-title" data-en="What I actually do">Що я реально роблю</span>
-      <span class="ss-count">(05)</span>
-    </div>
-    <div class="ss-rail reveal">
-      <article class="ss-tile hoverable" style="--accent:#8b85ff;">
-        <span class="ss-bignum">01</span>
-        <div class="ss-rule"></div>
-        <span class="ss-num" data-en="Corporate">Корпоративні</span>
-        <h3 data-en="Corporate websites">Корпоративні сайти</h3>
-        <p data-en="Solid company sites that look expensive even while the budget is still whispering.">Солідні сайти, що виглядають дорого навіть коли бюджет ще скромно мовчить.</p>
-      </article>
-      <article class="ss-tile hoverable" style="--accent:#0ea5e9;">
-        <span class="ss-bignum">02</span>
-        <div class="ss-rule"></div>
-        <span class="ss-num" data-en="Multi-page">Багатосторінкові</span>
-        <h3 data-en="Multi-page websites">Багатосторінкові сайти</h3>
-        <p data-en="Big, well-structured sites where users never get lost.">Великі структуровані сайти, де користувач не загубиться.</p>
-      </article>
-      <article class="ss-tile hoverable" style="--accent:#10b981;">
-        <span class="ss-bignum">03</span>
-        <div class="ss-rule"></div>
-        <span class="ss-num" data-en="Services">Послуги</span>
-        <h3 data-en="Service-business sites">Сайти для сфери послуг</h3>
-        <p data-en="For salons, studios and services that turn visitors into clients.">Для салонів, студій і сервісів, що перетворюють відвідувачів на клієнтів.</p>
-      </article>
-      <article class="ss-tile hoverable" style="--accent:#f59e0b;">
-        <span class="ss-bignum">04</span>
-        <div class="ss-rule"></div>
-        <span class="ss-num" data-en="Landing">Лендинг</span>
-        <h3 data-en="Landing pages">Лендинги</h3>
-        <p data-en="Conversion-first pages so focused it's almost rude.">Сторінки під конверсію, настільки сфокусовані, що аж незручно.</p>
-      </article>
-      <article class="ss-tile hoverable" style="--accent:#ec4899;">
-        <span class="ss-bignum">05</span>
-        <div class="ss-rule"></div>
-        <span class="ss-num" data-en="Personal">Бренд</span>
-        <h3 data-en="Personal brand sites">Сайти особистого бренду</h3>
-        <p data-en="Sites that sell you as an expert, not just a nice photo.">Сайти, що продають вас як експерта, а не просто гарне фото.</p>
-      </article>
-    </div>
-    <div class="ss-nav reveal">
-      <button data-dir="-1" aria-label="Prev">←</button>
-      <span class="ss-navline"></span>
-      <button data-dir="1" aria-label="Next">→</button>
-    </div>
+  <div class="wrap svc-wrap">
+    <span class="eyebrow reveal" data-en="Services · what I actually do">Послуги · що я реально роблю</span>
+    <ul class="svc-list reveal">
+      <li><a href="#contact" data-en="Corporate websites<span class='d'>look expensive even while the budget is still whispering</span>">Корпоративні сайти<span class="d">виглядають дорого навіть коли бюджет скромно мовчить</span></a></li>
+      <li><a href="#contact" data-en="Multi-page websites<span class='d'>big structured sites where users never get lost</span>">Багатосторінкові сайти<span class="d">великі структуровані сайти, де користувач не загубиться</span></a></li>
+      <li><a href="#contact" data-en="Service-business sites<span class='d'>salons, studios and services that turn visitors into clients</span>">Сайти для сфери послуг<span class="d">салони, студії й сервіси, що перетворюють відвідувачів на клієнтів</span></a></li>
+      <li><a href="#contact" data-en="Landing pages<span class='d'>conversion-first pages so focused it's almost rude</span>">Лендинги<span class="d">сторінки під конверсію, настільки сфокусовані, що аж незручно</span></a></li>
+      <li><a href="#contact" data-en="Personal brand sites<span class='d'>sell you as an expert, not just a nice photo</span>">Сайти особистого бренду<span class="d">продають вас як експерта, а не просто гарне фото</span></a></li>
+    </ul>
   </div>
 </section>
 
 <!-- ===== PROCESS ===== -->
-<section id="process" style="background:var(--bg-soft);">
+<section id="process">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" data-en="How I work">Процес роботи</span>
-      <h2 class="mt-s" data-en="A process with almost zero chaos">Процес майже без хаосу</h2>
-      <p class="muted" data-en="Same reliable backbone every time, gently bent around your deadline and budget.">Той самий надійний каркас щоразу, делікатно підігнаний під ваш дедлайн і бюджет.</p>
-    </div>
-    <div class="proc-flow reveal">
-      <div class="proc-track">
-        <div class="pstep hoverable"><div class="pdot">01</div><h3 data-en="Brief & goals">Бриф і цілі</h3><p data-en="Aligning on the goal, audience and success metrics.">Узгоджуємо ціль, аудиторію та метрики успіху.</p></div>
-        <div class="pstep hoverable"><div class="pdot">02</div><h3 data-en="Research">Дослідження</h3><p data-en="Interviews, competitors and data to find the real problem.">Інтерв'ю, конкуренти й дані, щоб знайти справжню проблему.</p></div>
-        <div class="pstep hoverable"><div class="pdot">03</div><h3 data-en="User flows & IA">Сценарії та IA</h3><p data-en="Mapping user flows and information architecture.">Карти сценаріїв та інформаційна архітектура.</p></div>
-        <div class="pstep hoverable"><div class="pdot">04</div><h3 data-en="Wireframes">Вайрфрейми</h3><p data-en="Low-fidelity structure to validate hierarchy.">Чорнова структура, щоб перевірити ієрархію.</p></div>
-        <div class="pstep hoverable"><div class="pdot">05</div><h3 data-en="UI design">UI-дизайн</h3><p data-en="High-fidelity, accessible interfaces on one system.">Чисті, доступні інтерфейси на єдиній системі.</p></div>
-        <div class="pstep hoverable"><div class="pdot">06</div><h3 data-en="Prototype">Прототип</h3><p data-en="Interactive prototype that feels like the real thing.">Інтерактивний прототип, що відчувається як живий продукт.</p></div>
-        <div class="pstep hoverable"><div class="pdot">07</div><h3 data-en="Testing">Тестування</h3><p data-en="Usability testing and iteration on real feedback.">Юзабіліті-тести та ітерації на реальному фідбеку.</p></div>
-        <div class="pstep hoverable"><div class="pdot">08</div><h3 data-en="Handoff & support">Хендоф і підтримка</h3><p data-en="Dev-ready files, docs and help during the build.">Готові файли, документація й допомога під час розробки.</p></div>
+      <div>
+        <span class="eyebrow" data-en="How I work">Процес роботи</span>
+        <h2 data-en="A process with <b>almost zero</b> chaos">Процес <b>майже без</b> хаосу</h2>
       </div>
+      <span class="idx">(08)</span>
+    </div>
+    <div class="proc-grid reveal">
+      <div class="pstep"><div class="pdot">01</div><h3 data-en="Brief & goals">Бриф і цілі</h3><p data-en="Aligning on the goal, audience and success metrics.">Узгоджуємо ціль, аудиторію та метрики успіху.</p></div>
+      <div class="pstep"><div class="pdot">02</div><h3 data-en="Research">Дослідження</h3><p data-en="Interviews, competitors and data to find the real problem.">Інтерв'ю, конкуренти й дані, щоб знайти справжню проблему.</p></div>
+      <div class="pstep"><div class="pdot">03</div><h3 data-en="User flows & IA">Сценарії та IA</h3><p data-en="Mapping user flows and information architecture.">Карти сценаріїв та інформаційна архітектура.</p></div>
+      <div class="pstep"><div class="pdot">04</div><h3 data-en="Wireframes">Вайрфрейми</h3><p data-en="Low-fidelity structure to validate hierarchy.">Чорнова структура, щоб перевірити ієрархію.</p></div>
+      <div class="pstep"><div class="pdot">05</div><h3 data-en="UI design">UI-дизайн</h3><p data-en="High-fidelity, accessible interfaces on one system.">Чисті, доступні інтерфейси на єдиній системі.</p></div>
+      <div class="pstep"><div class="pdot">06</div><h3 data-en="Prototype">Прототип</h3><p data-en="Interactive prototype that feels like the real thing.">Інтерактивний прототип, що відчувається як живий продукт.</p></div>
+      <div class="pstep"><div class="pdot">07</div><h3 data-en="Testing">Тестування</h3><p data-en="Usability testing and iteration on real feedback.">Юзабіліті-тести та ітерації на реальному фідбеку.</p></div>
+      <div class="pstep"><div class="pdot">08</div><h3 data-en="Handoff & support">Хендоф і підтримка</h3><p data-en="Dev-ready files, docs and help during the build.">Готові файли, документація й допомога під час розробки.</p></div>
     </div>
   </div>
 </section>
@@ -292,16 +223,17 @@
 <section id="mentoring">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" data-en="Mentoring">Менторство</span>
-      <h2 class="mt-s" data-en="I'll teach you until they get jealous">Навчу так, щоб тобі заздрили</h2>
-      <p class="muted" data-en="One on one, on real tasks, zero fluff (we leave the fluff to the pillows). We pump up your skills, your design sense and a portfolio that finally stops embarrassing you.">Індивідуально, на реальних задачах і без води (воду лишаємо рослинам). Прокачуємо навички, чуття дизайну й портфоліо, яке нарешті перестане соромити.</p>
+      <div>
+        <span class="eyebrow" data-en="Mentoring">Менторство</span>
+        <h2 data-en="I'll teach you until <b>they get jealous</b>">Навчу так, щоб <b>тобі заздрили</b></h2>
+        <p class="mt-s" data-en="One on one, on real tasks, zero fluff (we leave the fluff to the pillows).">Індивідуально, на реальних задачах і без води (воду лишаємо рослинам).</p>
+      </div>
+      <span class="idx">1:1</span>
     </div>
-
-    <!-- two directions -->
     <div class="mentor-grid">
-      <article class="card mentor-card reveal">
+      <article class="mentor-card reveal">
         <span class="mc-tag" data-en="Track 01">Напрям 01</span>
-        <h3 data-en="Web design mentoring">Менторство з вебдизайну</h3>
+        <h3 data-en="Mentoring in <b>web design</b>">Менторство з <b>вебдизайну</b></h3>
         <p data-en="For beginners and Junior/Middle designers who want to build modern sites, not template clones from 2012.">Для початківців і Junior/Middle, хто хоче робити сучасні сайти, а не клони шаблонів із 2012-го.</p>
         <ul class="mc-list">
           <li data-en="Design fundamentals">Основи дизайну</li>
@@ -317,9 +249,9 @@
           <li data-en="Full site flow: brief → result">Сайт від брифу до готового результату</li>
         </ul>
       </article>
-      <article class="card mentor-card reveal">
+      <article class="mentor-card reveal">
         <span class="mc-tag" data-en="Track 02">Напрям 02</span>
-        <h3 data-en="UI/UX design mentoring">Менторство з UI/UX дизайну</h3>
+        <h3 data-en="Mentoring in <b>UI/UX design</b>">Менторство з <b>UI/UX дизайну</b></h3>
         <p data-en="For those who've had enough of pretty pictures and want the design to actually think.">Для тих, хто наситився красивими картинками й хоче, щоб дизайн ще й думав.</p>
         <ul class="mc-list">
           <li data-en="UX fundamentals">Основи UX</li>
@@ -337,61 +269,28 @@
       </article>
     </div>
 
-    <!-- what you get -->
-    <div class="section-head reveal" style="margin-top:clamp(48px,6vw,72px);">
-      <span class="eyebrow" data-en="What you get">Що ви отримаєте</span>
-    </div>
-    <div class="grid cols-4">
-      <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3 data-en="Real, usable skills">Реальні навички</h3>
-        <p data-en="Practice over theory. We leave the notes to people who love notes.">Практика замість теорії. Конспекти лишаємо тим, хто любить конспекти.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <h3 data-en="A portfolio that sells">Портфоліо, що продає</h3>
-        <p data-en="Cases people want to open, not close on slide two.">Кейси, які хочеться відкрити, а не закрити на другому слайді.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <h3 data-en="Figma & AI confidence">Впевненість у Figma та AI</h3>
-        <p data-en="Faster workflow. AI does the boring stuff, you do the pretty stuff.">Швидший воркфлоу. AI робить нудне, ти робиш красиве.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v6H3zM3 13h12v8H3z"/></svg></div>
-        <h3 data-en="Your own process">Власний процес</h3>
-        <p data-en="A clear flow from brief to result, without the 'let's redo it all' panic.">Чіткий шлях від брифу до результату. Без паніки «а давай усе переробимо».</p>
-      </div>
-    </div>
-
-    <!-- portfolio review -->
-    <div class="review-band reveal" style="margin-top:24px;">
+    <div class="review-band reveal">
       <div>
         <span class="eyebrow" data-en="Separate service">Окрема послуга</span>
-        <h3 class="mt-s" data-en="Portfolio review">Розбір портфоліо</h3>
+        <h3 class="mt-s" data-en="Portfolio <b>review</b>">Розбір <b>портфоліо</b></h3>
         <p data-en="Bring your cases or Behance. We go through them together and make them sell you, not scare people away.">Приноси кейси або Behance. Розбираємо разом і робимо так, щоб вони тебе продавали, а не лякали.</p>
       </div>
       <ul class="review-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Honest, structured feedback">Чесний структурований фідбек</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="How to present a case right">Як правильно подати кейс</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Visual & storytelling fixes">Правки візуалу й сторітелінгу</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="A clear action list">Чіткий список, що покращити</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Honest, structured feedback">Чесний структурований фідбек</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="How to present a case right">Як правильно подати кейс</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Visual & storytelling fixes">Правки візуалу й сторітелінгу</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="A clear action list">Чіткий список, що покращити</span></li>
       </ul>
     </div>
 
-    <!-- format -->
-    <div class="section-head reveal" style="margin-top:clamp(48px,6vw,72px);">
-      <span class="eyebrow" data-en="How it works">Формат роботи</span>
-    </div>
-    <div class="format-row reveal">
-      <div class="format-item"><span class="fnum">01</span><div><h4 data-en="1:1 meetings">Зустрічі 1:1</h4><p data-en="Live sessions for your level and goal (camera optional, but I'll know).">Живі сесії під твій рівень і ціль (камеру вмикати необов'язково, але я здогадаюсь).</p></div></div>
-      <div class="format-item"><span class="fnum">02</span><div><h4 data-en="Practical tasks">Практичні завдання</h4><p data-en="You learn by doing real work. YouTube tutorials can wait.">Вчишся, роблячи реальні задачі. Туторіали на YouTube зачекають.</p></div></div>
-      <div class="format-item"><span class="fnum">03</span><div><h4 data-en="Feedback">Зворотний зв'язок</h4><p data-en="Detailed review of every step. Praise when earned, honest nudges when needed.">Детальний розбір кожного кроку. Хвалю заслужено, штовхаю по ділу.</p></div></div>
+    <div class="format-row mt-l">
+      <div class="format-item reveal"><span class="fnum">01</span><div><h4 data-en="1:1 meetings">Зустрічі 1:1</h4><p data-en="Live sessions for your level and goal (camera optional, but I'll know).">Живі сесії під твій рівень і ціль (камеру вмикати необов'язково, але я здогадаюсь).</p></div></div>
+      <div class="format-item reveal"><span class="fnum">02</span><div><h4 data-en="Practical tasks">Практичні завдання</h4><p data-en="You learn by doing real work. YouTube tutorials can wait.">Вчишся, роблячи реальні задачі. Туторіали на YouTube зачекають.</p></div></div>
+      <div class="format-item reveal"><span class="fnum">03</span><div><h4 data-en="Feedback">Зворотний зв'язок</h4><p data-en="Detailed review of every step. Praise when earned, honest nudges when needed.">Детальний розбір кожного кроку. Хвалю заслужено, штовхаю по ділу.</p></div></div>
     </div>
 
     <div class="center mt-l reveal">
-      <a class="btn btn-primary hoverable" href="#contact" data-en="I want mentoring">Хочу на менторство
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="#contact" data-en="I want mentoring">Хочу на менторство</a>
     </div>
   </div>
 </section>
@@ -399,93 +298,96 @@
 <!-- ===== PRICING ===== -->
 <section id="pricing">
   <div class="wrap">
-    <div class="section-head reveal" style="margin-inline:auto;text-align:center;">
-      <span class="eyebrow" style="justify-content:center;" data-en="Pricing">Ціни</span>
-      <h2 class="mt-s" data-en="Pricing without the panic">Ціни без валідолу</h2>
-      <p class="muted" data-en="Transparent starting prices. No fine print, no plot twists at the end.">Прозорі стартові ціни. Без дрібного шрифту й сюрпризів наприкінці.</p>
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow" data-en="Pricing">Ціни</span>
+        <h2 data-en="Pricing <b>without</b> the panic">Ціни <b>без</b> валідолу</h2>
+        <p class="mt-s" data-en="Transparent starting prices. No fine print, no plot twists at the end.">Прозорі стартові ціни. Без дрібного шрифту й сюрпризів наприкінці.</p>
+      </div>
+      <span class="idx">EUR</span>
     </div>
-    <div class="price-grid">
-      <div class="price reveal">
+    <div class="price-grid reveal">
+      <div class="price">
         <h3 data-en="Landing page">Лендінг</h3>
         <div class="amount"><small data-en="from">від</small> €200</div>
         <div class="from" data-en="One high-converting page">Одна сторінка під конверсію</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Conversion-focused layout">Структура під конверсію</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Mobile-first & responsive">Mobile-first і адаптив</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Up to 2 revision rounds">До 2 раундів правок</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Dev-ready Figma file">Готовий файл Figma</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Conversion-focused layout">Структура під конверсію</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Mobile-first & responsive">Mobile-first і адаптив</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Up to 2 revision rounds">До 2 раундів правок</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Dev-ready Figma file">Готовий файл Figma</span></li>
         </ul>
-        <a class="btn btn-ghost hoverable" href="#contact" data-en="Get started">Почати</a>
+        <a class="btn btn-ghost" href="#contact" data-en="Get started">Почати</a>
       </div>
-      <div class="price featured reveal">
+      <div class="price featured">
         <span class="badge" data-en="Most popular">Найпопулярніше</span>
         <h3 data-en="UI screen design">UI-екран</h3>
         <div class="amount"><small data-en="from">від</small> €50<small data-en=" / screen"> / екран</small></div>
         <div class="from" data-en="Scales with your product">Масштабується під продукт</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Web or mobile screens">Веб- або мобільні екрани</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="All states designed">Усі стани продумані</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Consistent component use">Єдині компоненти</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Volume discounts available">Знижки за обсяг</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Web or mobile screens">Веб- або мобільні екрани</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="All states designed">Усі стани продумані</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Consistent component use">Єдині компоненти</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Volume discounts available">Знижки за обсяг</span></li>
         </ul>
-        <a class="btn btn-primary hoverable" href="#contact" data-en="Get a quote">Отримати прорахунок</a>
+        <a class="btn" href="#contact" data-en="Get a quote">Отримати прорахунок</a>
       </div>
-      <div class="price reveal">
+      <div class="price">
         <h3 data-en="Full product design">Повний продукт</h3>
         <div class="amount" data-en="Custom">Кастомно</div>
         <div class="from" data-en="End-to-end partnership">Партнерство під ключ</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="UX research → UI → testing">UX-дослідження → UI → тести</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Full product flows">Повні сценарії продукту</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Ongoing collaboration">Постійна співпраця</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Flexible monthly or fixed">Гнучко: помісячно або фікс</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="UX research → UI → testing">UX-дослідження → UI → тести</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Full product flows">Повні сценарії продукту</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Ongoing collaboration">Постійна співпраця</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> <span data-en="Flexible monthly or fixed">Гнучко: помісячно або фікс</span></li>
         </ul>
-        <a class="btn btn-ghost hoverable" href="#contact" data-en="Let's talk">Обговорити</a>
+        <a class="btn btn-ghost" href="#contact" data-en="Let's talk">Обговорити</a>
       </div>
     </div>
     <div class="budget-note reveal">
-      <div class="bn-card hoverable">
-        <span class="bn-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l1.9 6.4 6.4 1.9-6.4 1.9L12 19.1l-1.9-6.4-6.4-1.9 6.4-1.9z"/></svg></span>
-        <p data-en="Budget shy or royal? <b class='bn-grad'>I'll build a site for any of them</b>">Бюджет скромний чи королівський? <b class="bn-grad">Зроблю сайт під будь-який</b></p>
-      </div>
+      <p class="bn-card" data-en="Budget shy or royal? <b>I'll build a site for any of them</b>">Бюджет скромний чи королівський? <b>Зроблю сайт під будь-який</b></p>
     </div>
   </div>
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
-<section id="testimonials" style="background:var(--bg-soft);">
+<section id="testimonials">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" data-en="Testimonials">Відгуки</span>
-      <h2 class="mt-s" data-en="Kind words from people I worked with">Теплі слова від тих, з ким працювала</h2>
+      <div>
+        <span class="eyebrow" data-en="Testimonials">Відгуки</span>
+        <h2 data-en="Kind words from <b>people I worked with</b>">Теплі слова від <b>тих, з ким працювала</b></h2>
+      </div>
+      <span class="idx">(05)</span>
     </div>
-    <div class="t-scroller reveal">
-      <div class="t-track">
-        <div class="card quote">
-          <span class="mark">“</span>
-          <p data-en="Karina turned a messy idea into a product our users instantly got. Drop-off down, signups up.">Каріна перетворила сирий задум на продукт, який користувачі зрозуміли одразу. Відмов менше, реєстрацій більше.</p>
-          <div class="who"><span class="av"><svg viewBox="0 0 46 46" fill="currentColor" aria-hidden="true"><circle cx="23" cy="18" r="8"/><path d="M7 44c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg></span><div><b>Andrii M.</b><span data-en="Founder, SaaS startup">Засновник, SaaS-стартап</span></div></div>
-        </div>
-        <div class="card quote">
-          <span class="mark">“</span>
-          <p data-en="The landing she designed lifted our conversion noticeably in the first month. And it just looks expensive.">Лендінг, який вона зробила, помітно підняв нам конверсію за перший місяць. І виглядає дорого.</p>
-          <div class="who"><span class="av"><svg viewBox="0 0 46 46" fill="currentColor" aria-hidden="true"><circle cx="23" cy="18" r="8"/><path d="M7 44c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg></span><div><b>Olena K.</b><span data-en="Marketing lead, e-commerce">Маркетинг-лід, e-commerce</span></div></div>
-        </div>
-        <div class="card quote">
-          <span class="mark">“</span>
-          <p data-en="Rare mix: real business thinking plus attention to every pixel. Clean handoff, everything pixel-perfect, our devs were thrilled.">Рідкісне поєднання: бізнес-мислення і водночас увага до кожного пікселя. Чистий хендоф, усе pixel-perfect, наші деви були в захваті.</p>
-          <div class="who"><span class="av"><svg viewBox="0 0 46 46" fill="currentColor" aria-hidden="true"><circle cx="23" cy="18" r="8"/><path d="M7 44c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg></span><div><b>Dmytro S.</b><span data-en="Product Manager">Продакт-менеджер</span></div></div>
-        </div>
-        <div class="card quote">
-          <span class="mark">“</span>
-          <p data-en="Fast, on point, zero unnecessary questions. I got a site that actually sells.">Швидко, по суті, без зайвих питань. Отримала сайт, який реально продає.</p>
-          <div class="who"><span class="av"><svg viewBox="0 0 46 46" fill="currentColor" aria-hidden="true"><circle cx="23" cy="18" r="8"/><path d="M7 44c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg></span><div><b>Iryna P.</b><span data-en="Studio owner">Власниця студії</span></div></div>
-        </div>
-        <div class="card quote">
-          <span class="mark">“</span>
-          <p data-en="She owned the whole design end-to-end: structure, UI, final handoff. Smooth process, strong result.">Закрила весь дизайн під ключ: структура, UI, фінальний хендоф. Процес гладкий, результат сильний.</p>
-          <div class="who"><span class="av"><svg viewBox="0 0 46 46" fill="currentColor" aria-hidden="true"><circle cx="23" cy="18" r="8"/><path d="M7 44c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg></span><div><b>Maksym R.</b><span data-en="Founder">Засновник</span></div></div>
-        </div>
+  </div>
+  <div class="t-scroller reveal">
+    <div class="t-track">
+      <div class="quote">
+        <span class="mark">“</span>
+        <p data-en="Karina turned a messy idea into a product our users instantly got. Drop-off down, signups up.">Каріна перетворила сирий задум на продукт, який користувачі зрозуміли одразу. Відмов менше, реєстрацій більше.</p>
+        <div class="who"><div><b>Andrii M.</b><span data-en="Founder, SaaS startup">Засновник, SaaS-стартап</span></div></div>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p data-en="The landing she designed lifted our conversion noticeably in the first month. And it just looks expensive.">Лендінг, який вона зробила, помітно підняв нам конверсію за перший місяць. І виглядає дорого.</p>
+        <div class="who"><div><b>Olena K.</b><span data-en="Marketing lead, e-commerce">Маркетинг-лід, e-commerce</span></div></div>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p data-en="Rare mix: real business thinking plus attention to every pixel. Clean handoff, everything pixel-perfect, our devs were thrilled.">Рідкісне поєднання: бізнес-мислення і водночас увага до кожного пікселя. Чистий хендоф, усе pixel-perfect, наші деви були в захваті.</p>
+        <div class="who"><div><b>Dmytro S.</b><span data-en="Product Manager">Продакт-менеджер</span></div></div>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p data-en="Fast, on point, zero unnecessary questions. I got a site that actually sells.">Швидко, по суті, без зайвих питань. Отримала сайт, який реально продає.</p>
+        <div class="who"><div><b>Iryna P.</b><span data-en="Studio owner">Власниця студії</span></div></div>
+      </div>
+      <div class="quote">
+        <span class="mark">“</span>
+        <p data-en="She owned the whole design end-to-end: structure, UI, final handoff. Smooth process, strong result.">Закрила весь дизайн під ключ: структура, UI, фінальний хендоф. Процес гладкий, результат сильний.</p>
+        <div class="who"><div><b>Maksym R.</b><span data-en="Founder">Засновник</span></div></div>
       </div>
     </div>
   </div>
@@ -495,9 +397,12 @@
 <section id="contact">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow" data-en="Contact">Контакти</span>
-      <h2 class="mt-s" data-en="Let's work together">Попрацюймо разом</h2>
-      <p class="muted" data-en="Your message lands straight in my Telegram. I reply fast, promise.">Повідомлення прилітає прямо мені в Telegram. Відповідаю швидко, обіцяю.</p>
+      <div>
+        <span class="eyebrow" data-en="Contact">Контакти</span>
+        <h2 data-en="Let's <b>work</b> together">Попрацюймо <b>разом</b></h2>
+        <p class="mt-s" data-en="Your message lands straight in my Telegram. I reply fast, promise.">Повідомлення прилітає прямо мені в Telegram. Відповідаю швидко, обіцяю.</p>
+      </div>
+      <span class="idx" data-en="reply < 24h">відповідь < 24 год</span>
     </div>
     <div class="contact-grid">
       <div class="reveal">
@@ -526,8 +431,8 @@
             <label for="budget" data-en="Budget (optional)">Бюджет (необов'язково)</label>
             <select id="budget" name="budget">
               <option data-en="Not sure yet">Поки не знаю</option>
-              <option>€200 – €1,000</option>
-              <option>€1,000 – €5,000</option>
+              <option data-en="€200 to €1,000">€200 до €1,000</option>
+              <option data-en="€1,000 to €5,000">€1,000 до €5,000</option>
               <option>€5,000+</option>
             </select>
           </div>
@@ -535,40 +440,19 @@
             <label for="message" data-en="Project details">Деталі проєкту</label>
             <textarea id="message" name="message" placeholder="Що ви створюєте і як виглядає успіх?" data-en-ph="What are you building, and what does success look like?" required></textarea>
           </div>
-          <button class="btn btn-primary hoverable" type="submit" style="width:100%;justify-content:center;" data-en="Send message">Надіслати
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn" type="submit" style="justify-content:center;" data-en="Send message">Надіслати</button>
           <div class="form-success" role="status" aria-live="polite" data-en="Thanks! Your message has been received. I'll reply within 24 hours.">Дякую! Ваше повідомлення отримано. Відповім протягом 24 годин.</div>
         </form>
       </div>
-
       <div class="reveal">
         <div class="contact-card">
-          <h3 style="margin-bottom:8px;" data-en="Other ways to reach me">Інші способи зв'язку</h3>
-          <p class="muted" style="font-size:15px;margin-bottom:14px;" data-en="Prefer to skip the form? Use any of these.">Не хочете заповнювати форму? Оберіть будь-що з цього.</p>
-          <div class="contact-item">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
-            <div><div class="lbl">Email</div><a class="val hoverable" href="mailto:karinakudina762@gmail.com">karinakudina762@gmail.com</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.3-.1-.5-.6-.2L6.2 13 1.4 11.5c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg></div>
-            <div><div class="lbl">Telegram</div><a class="val hoverable" href="https://t.me/kari_kdn" target="_blank" rel="noopener">@kari_kdn</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
-            <div><div class="lbl">Instagram</div><a class="val hoverable" href="https://www.instagram.com/kari_kdn" target="_blank" rel="noopener">@kari_kdn</a></div>
-          </div>
-          <div class="contact-item">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.2 7.5c1.7 0 2.9.9 2.9 2.6 0 1-.5 1.7-1.3 2.1 1.1.4 1.7 1.2 1.7 2.4 0 1.9-1.4 2.9-3.3 2.9H3V7.5h5.2zM5.3 11.4h2.5c.8 0 1.3-.4 1.3-1.1S8.6 9.3 7.8 9.3H5.3v2.1zm0 4.3h2.7c.9 0 1.4-.5 1.4-1.2 0-.8-.5-1.2-1.4-1.2H5.3v2.4zM21 13.6c0 .2 0 .4-.1.6h-5c.1 1 .8 1.6 1.8 1.6.7 0 1.2-.3 1.5-.8h1.6c-.4 1.4-1.6 2.2-3.2 2.2-2 0-3.4-1.4-3.4-3.5s1.4-3.6 3.4-3.6c2.1 0 3.4 1.6 3.4 3.5zM15 8.5h4v1.1h-4z"/></svg></div>
-            <div><div class="lbl">Behance</div><a class="val hoverable" href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener" data-en="View portfolio">Портфоліо</a></div>
-          </div>
+          <h3 data-en="Other <b>ways</b> to reach me">Інші <b>способи</b> зв'язку</h3>
+          <div class="contact-item"><span class="lbl">Email</span><a class="val" href="mailto:karinakudina762@gmail.com">karinakudina762@gmail.com</a></div>
+          <div class="contact-item"><span class="lbl">Telegram</span><a class="val" href="https://t.me/kari_kdn" target="_blank" rel="noopener">@kari_kdn</a></div>
+          <div class="contact-item"><span class="lbl">Instagram</span><a class="val" href="https://www.instagram.com/kari_kdn" target="_blank" rel="noopener">@kari_kdn</a></div>
+          <div class="contact-item"><span class="lbl">Behance</span><a class="val" href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener" data-en="View portfolio">Портфоліо</a></div>
         </div>
-        <div class="card reveal" style="margin-top:24px;">
-          <div style="display:flex;align-items:center;gap:10px;font-weight:600;">
-            <span style="width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block;"></span>
-            <span data-en="Available for new projects">Відкрита до нових проєктів</span>
-          </div>
-          <p class="muted mt-s" style="font-size:15px;" data-en="Based in Kyiv (EET), working with clients worldwide.">Базуюся в Києві (EET), працюю з клієнтами по всьому світу.</p>
-        </div>
+        <p class="avail-card"><span class="avail-dot"></span> <span data-en="Available for new projects. Based in Kyiv (EET), working with clients worldwide.">Відкрита до нових проєктів. Базуюся в Києві (EET), працюю з клієнтами по всьому світу.</span></p>
       </div>
     </div>
   </div>
@@ -576,11 +460,12 @@
 </main>
 
 <footer class="site-footer">
+  <div class="footer-giant" aria-hidden="true">Karina Kudina</div>
   <div class="wrap">
     <div class="footer-grid">
-      <div style="max-width:300px;">
-        <a class="brand" href="#top"><span class="dot"></span><span class="brand-lock">Design Lab<small>by Karina Kudina</small></span></a>
-        <p class="muted" style="font-size:15px;" data-en="Product Designer (UI/UX) from Kyiv. Designs that stop the scroll.">Product Designer (UI/UX) з Києва. Дизайн, що зупиняє скрол.</p>
+      <div style="max-width:320px;">
+        <a class="brand" href="#top">Design Lab — Karina Kudina</a>
+        <p data-en="Product Designer (UI/UX) from Kyiv. Designs that stop the scroll.">Product Designer (UI/UX) з Києва. Дизайн, що зупиняє скрол.</p>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
@@ -598,12 +483,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year></span> design lab.</span>
-      <div class="footer-social">
-        <a class="hoverable" href="https://t.me/kari_kdn" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.3-.1-.5-.6-.2L6.2 13 1.4 11.5c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg></a>
-        <a class="hoverable" href="https://www.instagram.com/kari_kdn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a class="hoverable" href="https://www.behance.net/c142ac6f" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.2 7.5c1.7 0 2.9.9 2.9 2.6 0 1-.5 1.7-1.3 2.1 1.1.4 1.7 1.2 1.7 2.4 0 1.9-1.4 2.9-3.3 2.9H3V7.5h5.2zM5.3 11.4h2.5c.8 0 1.3-.4 1.3-1.1S8.6 9.3 7.8 9.3H5.3v2.1zm0 4.3h2.7c.9 0 1.4-.5 1.4-1.2 0-.8-.5-1.2-1.4-1.2H5.3v2.4zM21 13.6c0 .2 0 .4-.1.6h-5c.1 1 .8 1.6 1.8 1.6.7 0 1.2-.3 1.5-.8h1.6c-.4 1.4-1.6 2.2-3.2 2.2-2 0-3.4-1.4-3.4-3.5s1.4-3.6 3.4-3.6c2.1 0 3.4 1.6 3.4 3.5zM15 8.5h4v1.1h-4z"/></svg></a>
-      </div>
+      <span>© <span data-year></span> design lab</span>
+      <span>Kyiv — worldwide</span>
     </div>
   </div>
 </footer>

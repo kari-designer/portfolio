@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сітка & Композиція — навчальна карусель</title>
+<!--
+  ЗОБРАЖЕННЯ: блоки .img — заглушки. Заміни background на
+  background-image:url('фото.jpg'); filter:grayscale(1) лишай для ч/б.
+  АКЦЕНТ: змінна --flash (сигнальний червоний). Хочеш інший — зміни 1 рядок.
+  Увесь текст >= 16px.
+-->
+<style>
+  :root{
+    --ink:#0c0c0c;
+    --paper:#ffffff;
+    --paper-2:#f1f0ec;
+    --grey:#d7d6d1;
+    --flash:#ff2e00;
+    --grotesk:"Helvetica Neue","Helvetica","Arial","Segoe UI",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  body{display:flex;flex-direction:column;align-items:center;gap:56px;padding:56px 0 96px}
+
+  .slide{
+    position:relative;width:1080px;height:1350px;overflow:hidden;
+    font-family:var(--grotesk);padding:58px 58px 52px;display:flex;flex-direction:column;
+  }
+  .wt{background:var(--paper);color:var(--ink)}
+  .bk{background:var(--ink);color:var(--paper)}
+  .fl{background:var(--flash);color:var(--ink)}
+
+  .huge{font-weight:800;text-transform:uppercase;line-height:.82;letter-spacing:-.03em}
+  .reg{font-size:.4em;vertical-align:.6em;font-weight:700}
+  .mlabel{font-size:16px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;line-height:1.4}
+  .meta{font-size:16px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;line-height:1.5}
+  .body{font-size:19px;line-height:1.5}
+  .body-lg{font-size:23px;line-height:1.42}
+
+  .top{display:flex;justify-content:space-between;align-items:flex-start;flex:0 0 auto;position:relative;z-index:5}
+  .foot{display:flex;justify-content:space-between;align-items:flex-end;flex:0 0 auto;position:relative;z-index:5}
+  .rule{border:none;border-top:2px solid currentColor;width:100%}
+
+  .numbox{display:inline-flex;align-items:center;justify-content:center;font-weight:800;line-height:.78;letter-spacing:-.05em}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;border:2px solid currentColor;
+    padding:13px 20px;font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .btn-fl{background:var(--flash);color:#fff;border-color:var(--flash)}
+
+  .marquee{overflow:hidden;white-space:nowrap;border-top:2px solid currentColor;border-bottom:2px solid currentColor;padding:12px 0}
+  .marquee span{font-size:32px;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+
+  .img{background:linear-gradient(135deg,#cdccc7,#e6e5e1 60%,#d2d1cc);filter:grayscale(1);position:relative;overflow:hidden}
+  .img .tag{position:absolute;left:12px;bottom:10px;font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(12,12,12,.5)}
+
+  .stamp{width:182px;height:182px;border-radius:50%;display:grid;place-items:center;text-align:center;
+    font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;line-height:1.45}
+  .dot{border-radius:50%;background:var(--flash)}
+  .flip{transform:rotate(180deg)}
+  .vert{writing-mode:vertical-rl}
+
+  .cols12{display:grid;grid-template-columns:repeat(12,1fr);gap:7px}
+  .cols12 .c{background:var(--paper-2);border:1px solid #e3e2dd}
+  .checkrow{display:flex;gap:18px;align-items:center;padding:18px 0;border-top:2px solid var(--ink)}
+  .checkrow .n{flex:0 0 auto;font-weight:800;font-size:34px;width:62px;letter-spacing:-.04em}
+  .checkrow p{font-size:22px;font-weight:600;line-height:1.18}
+</style>
+</head>
+<body>
+
+<!-- ===================== S1 — COVER ===================== -->
+<section class="slide wt">
+  <!-- мега-типографіка з виходом за край -->
+  <h1 class="huge" style="position:absolute;top:120px;left:-10px;font-size:300px;color:var(--ink);z-index:1">Сітка</h1>
+  <h1 class="huge" style="position:absolute;top:392px;right:-30px;font-size:120px;color:var(--flash);z-index:2">&amp; композиція</h1>
+  <h1 class="huge flip" style="position:absolute;bottom:-26px;left:-10px;font-size:200px;color:var(--paper-2);z-index:0">Сітка</h1>
+
+  <!-- круговий штамп -->
+  <div class="stamp" style="position:absolute;top:540px;right:60px;background:var(--flash);color:#fff;transform:rotate(-12deg);z-index:4">Навчальний<br>розбір<br>© 2026</div>
+
+  <div class="top">
+    <div class="huge" style="font-size:38px">KARI<span class="reg">®</span>KDN</div>
+    <div class="meta" style="text-align:right">GUIDE №01<br>2026</div>
+  </div>
+
+  <div class="grow"></div>
+
+  <div style="position:relative;z-index:5;max-width:520px;margin-bottom:14px">
+    <div class="dot" style="width:18px;height:18px;display:inline-block;margin-bottom:18px"></div>
+    <p class="body-lg" style="font-weight:600">Шість принципів, після яких дизайн перестає «розсипатися» і починає виглядати дорого. Без магії — лише система.</p>
+  </div>
+
+  <div class="foot">
+    <span class="btn btn-fl">Гортай &#8594;</span>
+    <div class="meta" style="text-align:right">01 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S2 — MANIFESTO ===================== -->
+<section class="slide bk">
+  <div class="numbox" style="position:absolute;top:-60px;right:-30px;font-size:520px;color:var(--flash);z-index:0">01</div>
+  <div class="vert meta" style="position:absolute;left:20px;top:50%;transform:translateY(-50%);letter-spacing:.3em">Навіщо сітка</div>
+
+  <div class="top">
+    <div class="meta">01 — Маніфест</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div class="grow" style="display:flex;flex-direction:column;justify-content:center;padding-left:46px;position:relative;z-index:3">
+    <h2 class="huge" style="font-size:104px">Дизайн<br>не «на&nbsp;око».<br><span style="color:var(--flash)">На сітці.</span></h2>
+    <p class="body-lg" style="max-width:600px;margin-top:30px;color:#d2d1ce">
+      Сітка — це не клітка, а опора. Вона прибирає випадкові відступи й хаотичні краї, тож око бачить порядок ще до першого слова.
+    </p>
+  </div>
+
+  <div class="marquee"><span>СІТКА © KARI_KDN &mdash; КОМПОЗИЦІЯ © KARI_KDN &mdash; СІТКА © KARI_KDN &mdash;</span></div>
+  <div class="foot" style="margin-top:20px">
+    <div class="meta">Збережи розбір</div>
+    <div class="meta" style="text-align:right">02 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S3 — 12 КОЛОНОК ===================== -->
+<section class="slide wt">
+  <div class="numbox" style="position:absolute;top:60px;right:-20px;font-size:440px;color:var(--paper-2);z-index:0">12</div>
+
+  <div class="top">
+    <div class="meta">02 — Колонки</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div style="position:relative;z-index:3;margin-top:14px">
+    <h2 class="huge" style="font-size:120px">12 колонок</h2>
+  </div>
+
+  <!-- повноекранна колонкова сітка з червоним спаном -->
+  <div class="grow" style="position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center">
+    <div class="cols12" style="height:360px">
+      <div class="c"></div><div class="c"></div>
+      <div style="background:var(--flash);grid-column:span 4"></div>
+      <div class="c"></div>
+      <div style="background:var(--ink);grid-column:span 4"></div>
+      <div class="c"></div>
+    </div>
+    <div class="meta" style="display:flex;justify-content:space-between;margin-top:14px">
+      <span>01</span><span>04</span><span>05 — БЛОК ×4</span><span>09 — БЛОК ×4</span><span>12</span>
+    </div>
+  </div>
+
+  <p class="body-lg" style="position:relative;z-index:3;max-width:760px">12 ділиться на 2, 3, 4 і 6 — будь-який блок лягає рівно. Контент кріпиться до колонок, а проміжки між ними тримають ритм.</p>
+
+  <div class="rule" style="margin-top:20px"></div>
+  <div class="foot" style="margin-top:16px">
+    <div class="meta">Кріпи все до колонок</div>
+    <div class="meta" style="text-align:right">03 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S4 — КРОК ×8 ===================== -->
+<section class="slide wt">
+  <div class="top">
+    <div class="meta">03 — Відступи</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div style="margin-top:18px">
+    <h2 class="huge" style="font-size:128px">Крок &times;8</h2>
+  </div>
+
+  <!-- зростаючі бокси внахлест, один червоний -->
+  <div class="grow" style="display:flex;align-items:center;gap:20px">
+    <div class="numbox" style="width:110px;height:110px;font-size:40px;border:2px solid var(--ink)">8</div>
+    <div class="numbox" style="width:150px;height:150px;font-size:50px;background:var(--ink);color:#fff;margin-left:-10px">16</div>
+    <div class="numbox" style="width:200px;height:200px;font-size:60px;background:var(--flash);color:#fff;margin-left:-10px;transform:translateY(-14px)">24</div>
+    <div class="numbox" style="width:248px;height:248px;font-size:72px;border:2px solid var(--ink);margin-left:-10px">32</div>
+  </div>
+
+  <p class="body-lg" style="max-width:760px">Усі відступи — кратні 8. Інтерфейс «клацає» в єдиний ритм, а не живе на випадкових 7, 13 і 21.</p>
+
+  <div class="rule" style="margin-top:20px"></div>
+  <div class="foot" style="margin-top:16px">
+    <div class="meta">8 · 16 · 24 · 32 · 40</div>
+    <div class="meta" style="text-align:right">04 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S5 — ВИРІВНЮВАННЯ ===================== -->
+<section class="slide wt">
+  <!-- червона напрямна через увесь слайд -->
+  <div style="position:absolute;left:360px;top:0;bottom:0;width:3px;background:var(--flash);z-index:1"></div>
+  <div class="vert huge" style="position:absolute;left:296px;top:300px;font-size:64px;color:var(--flash);z-index:2">Одна лінія</div>
+
+  <div class="top">
+    <div class="meta">04 — Вирівнювання</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div class="grow" style="display:flex;align-items:center">
+    <div style="margin-left:402px;width:100%;max-width:560px">
+      <div class="mlabel" style="margin-bottom:12px;color:var(--flash)">Стало — по одному краю</div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="height:22px;background:var(--ink);width:88%"></div>
+        <div style="height:22px;background:var(--ink);width:72%"></div>
+        <div style="height:22px;background:var(--ink);width:94%"></div>
+        <div style="height:70px;background:var(--ink);width:46%;margin-top:14px"></div>
+      </div>
+      <p class="body" style="margin-top:26px">Коли блоки стартують з однієї вертикалі, око зчитує їх як одне ціле. Менше країв — більше порядку.</p>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="foot" style="margin-top:16px">
+    <div class="meta">Обери край і тримайся його</div>
+    <div class="meta" style="text-align:right">05 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S6 — ПОВІТРЯ ===================== -->
+<section class="slide bk">
+  <div class="top">
+    <div class="meta">05 — Повітря</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <!-- одинокий акцент у порожнечі -->
+  <div class="dot" style="width:30px;height:30px;position:absolute;top:300px;left:90px"></div>
+
+  <div class="grow" style="display:flex;flex-direction:column;justify-content:flex-end">
+    <p class="body-lg" style="max-width:520px;margin-bottom:auto;margin-top:160px;color:#cfcecb;align-self:flex-end;text-align:right">
+      Вільне місце — не «недороблено». Це пауза, що піднімає цінність сусіднього. Дорогі бренди продають саме повітрям.
+    </p>
+    <h2 class="huge" style="font-size:182px;margin-left:-8px">Порож&shy;неча</h2>
+  </div>
+
+  <div class="foot" style="margin-top:30px">
+    <div class="meta">Не бійся пустого місця</div>
+    <div class="meta" style="text-align:right">06 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S7 — ФОКУС ===================== -->
+<section class="slide wt">
+  <!-- гігантська 1 як графіка -->
+  <div class="numbox" style="position:absolute;bottom:-120px;left:-20px;font-size:1180px;color:var(--ink);z-index:0;line-height:.7">1</div>
+  <div class="dot" style="width:220px;height:220px;position:absolute;top:300px;right:90px;z-index:1"></div>
+
+  <div class="top">
+    <div class="meta">06 — Фокус</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div class="grow" style="position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right">
+    <h2 class="huge" style="font-size:96px;color:var(--flash)">Один герой</h2>
+    <p class="body-lg" style="max-width:420px;margin-top:22px">На екрані — один головний елемент, помітно більший за решту. Коли «важливо» все — око не чіпляється ні за що.</p>
+  </div>
+
+  <div class="rule" style="position:relative;z-index:3"></div>
+  <div class="foot" style="margin-top:16px">
+    <div class="meta">Контраст масштабу = миттєва ієрархія</div>
+    <div class="meta" style="text-align:right">07 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S8 — ЗЛАМАЙ СІТКУ ===================== -->
+<section class="slide bk">
+  <div class="top">
+    <div class="meta">07 — Акцент</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div style="margin-top:14px">
+    <h2 class="huge" style="font-size:108px">Зламай сітку.<br><span style="color:var(--flash)">Свідомо.</span></h2>
+  </div>
+
+  <!-- рівні аутлайн-блоки + один червоний нахилений -->
+  <div class="grow" style="display:flex;align-items:center">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;width:100%;align-items:center">
+      <div style="height:150px;border:2px solid rgba(243,242,238,.35)"></div>
+      <div style="height:150px;border:2px solid rgba(243,242,238,.35)"></div>
+      <div style="height:200px;background:var(--flash);transform:translateY(-24px) rotate(-6deg);box-shadow:0 24px 60px rgba(255,46,0,.35)"></div>
+      <div style="height:150px;border:2px solid rgba(243,242,238,.35)"></div>
+      <div style="height:150px;border:2px solid rgba(243,242,238,.35)"></div>
+    </div>
+  </div>
+
+  <p class="body-lg" style="max-width:720px;color:#cfcecb">Один елемент, що навмисно випадає з ритму, притягує увагу сильніше за стрілку. Але працює лише тоді, коли решта стоїть рівно.</p>
+
+  <div class="rule" style="margin-top:22px"></div>
+  <div class="foot" style="margin-top:16px">
+    <div class="meta">Виняток помітний на тлі порядку</div>
+    <div class="meta" style="text-align:right">08 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S9 — ЧЕКЛИСТ ===================== -->
+<section class="slide wt">
+  <div class="top">
+    <div class="meta">08 — Чеклист</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div style="margin-top:14px">
+    <h2 class="huge" style="font-size:118px">Звір макет</h2>
+  </div>
+
+  <div class="grow" style="display:flex;flex-direction:column;justify-content:center">
+    <div class="checkrow"><span class="n" style="color:var(--flash)">01</span><p>Усе кріпиться до <b>колонок</b>, краї не «гуляють»</p></div>
+    <div class="checkrow"><span class="n" style="color:var(--flash)">02</span><p>Відступи <b>кратні 8</b>, без випадкових чисел</p></div>
+    <div class="checkrow"><span class="n" style="color:var(--flash)">03</span><p>Блоки вирівняні по <b>одному краю</b></p></div>
+    <div class="checkrow"><span class="n" style="color:var(--flash)">04</span><p>Є <b>вільне місце</b> — макет не забитий</p></div>
+    <div class="checkrow"><span class="n" style="color:var(--flash)">05</span><p>Видно <b>один головний</b> елемент</p></div>
+    <div class="checkrow" style="border-bottom:2px solid var(--ink)"><span class="n" style="color:var(--flash)">06</span><p>Ламаєш сітку — то <b>свідомо</b></p></div>
+  </div>
+
+  <div class="foot" style="margin-top:16px">
+    <span class="btn btn-fl">Збережи чеклист</span>
+    <div class="meta" style="text-align:right">09 / 10</div>
+  </div>
+</section>
+
+<!-- ===================== S10 — CTA ===================== -->
+<section class="slide bk">
+  <h2 class="huge" style="position:absolute;bottom:150px;left:-12px;font-size:300px;color:var(--flash);z-index:0">Direct</h2>
+  <div class="stamp" style="position:absolute;top:120px;right:54px;border:2px solid var(--paper);color:var(--paper);transform:rotate(11deg);z-index:3">Дизайн<br>на системі<br>© KARI_KDN</div>
+
+  <div class="top">
+    <div class="meta">Кінець розбору</div>
+    <div class="meta" style="text-align:right">KARI_KDN®</div>
+  </div>
+
+  <div class="grow" style="display:flex;flex-direction:column;justify-content:center;position:relative;z-index:3">
+    <h2 class="huge" style="font-size:96px">Зберемо<br>ваш сайт<br>на сітці</h2>
+    <p class="body-lg" style="max-width:580px;margin-top:28px;color:#d2d1ce">
+      Проєктую сайти, де кожен блок стоїть на місці, а не «десь поруч». Збережіть карусель і надішліть тому, чий макет час вирівняти.
+    </p>
+  </div>
+
+  <div class="foot" style="position:relative;z-index:3">
+    <span class="btn btn-fl">[ Написати в Direct ]</span>
+    <div class="meta" style="text-align:right">@KARI_KDN<br>10 / 10</div>
+  </div>
+</section>
+
+</body>
+</html>
