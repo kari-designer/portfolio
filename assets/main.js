@@ -26,6 +26,12 @@ document.querySelectorAll('[data-lang-label]').forEach(btn =>
   btn.addEventListener('click', () => setLang(document.documentElement.lang === 'en' ? 'uk' : 'en'))
 );
 
+// ---- Header gets a solid backdrop once content scrolls under it ----
+const siteHeader = document.querySelector('.site-header');
+const onHeaderScroll = () => siteHeader && siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+onHeaderScroll();
+window.addEventListener('scroll', onHeaderScroll, { passive: true });
+
 // ---- Mobile nav toggle ----
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
