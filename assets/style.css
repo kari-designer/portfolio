@@ -221,7 +221,7 @@ p{ max-width:60ch; }
 #work{ overflow:hidden; }
 .giant{
   font-weight:800; text-transform:uppercase; line-height:.8; letter-spacing:-.04em;
-  font-size:clamp(120px,22vw,360px); white-space:nowrap; user-select:none;
+  font-size:clamp(56px,22vw,360px); white-space:nowrap; user-select:none;
   color:var(--txt);
   margin:0 0 clamp(24px,4vw,44px) -0.04em;
 }
