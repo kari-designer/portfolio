@@ -838,3 +838,6 @@ section{ padding-block:clamp(72px,9vw,128px); }
 .hero h1{ margin-top:0; }
 .h1-kicker{ display:block; margin-bottom:18px; line-height:1.4; font-weight:500; }
 .h1-main{ display:block; }
+
+/* header: no hairline under the bar */
+.site-header,.site-header.scrolled{border-bottom-color:transparent}
