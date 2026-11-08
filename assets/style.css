@@ -841,3 +841,6 @@ section{ padding-block:clamp(72px,9vw,128px); }
 
 /* header: no hairline under the bar */
 .site-header,.site-header.scrolled{border-bottom-color:transparent}
+
+/* about photo: keep original 3:4 proportions */
+.about-photo img{height:auto;aspect-ratio:768/1024;object-fit:cover;display:block}
