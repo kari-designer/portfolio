@@ -830,3 +830,6 @@ section{ padding-block:clamp(72px,9vw,128px); }
   .svc-arr{ grid-column:2; grid-row:1; }
   .skill-groups{ grid-template-columns:1fr; }
 }
+
+/* burger: icon only, no outline box */
+.nav-toggle{ border:none; padding:8px; }
