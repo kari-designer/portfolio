@@ -203,3 +203,20 @@ if (marqueeTracks.length) {
   }
   window.addEventListener('load', () => setTimeout(run, reduce ? 100 : 1600));
 })();
+
+// ===== Refined motion: hero parallax =====
+(function () {
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const heroImg = document.querySelector('.hero-img');
+  if (heroImg) {
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(scrollY, innerHeight);
+        heroImg.style.transform = `translate3d(0, ${y * 0.25}px, 0)`;
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+})();
