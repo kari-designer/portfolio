@@ -8,4 +8,10 @@
     <image:image><image:loc>https://karidesigner.netlify.app/assets/og-cover.jpg</image:loc></image:image>
     <image:image><image:loc>https://karidesigner.netlify.app/assets/karina-about-web.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://karidesigner.netlify.app/resume/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
